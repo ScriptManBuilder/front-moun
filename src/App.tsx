@@ -1,25 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/header";
+import Footer from "./components/footer";
+import MainSection from "./components/mainSection";
+import ServiceCards from "./components/serviceCards";
+import WhyChoseUs from "./components/whyChoseUs";
+import OurApproach from "./components/ourApproach";
+import GlobalStyles from './assets/styles/global.styles';
+import OurStack from './components/ourStack';
+import Roadmap from './components/roadmap';
+import TelegramButton from './components/TelegramButton';
+import Discuss from './components/discuss';
+import { LocaleProvider } from './LocaleContext';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LocaleProvider>
+      <div className="App">
+        <GlobalStyles />
+        <Header />
+        <main>
+          <MainSection />
+         
+          <ServiceCards />
+          <WhyChoseUs />
+          <OurApproach />
+          <OurStack />
+          <Discuss />
+          <Roadmap />
+         
+          <TelegramButton />  
+        
+          
+        </main>
+        <Footer />
+      </div>
+    </LocaleProvider>
   );
 }
 

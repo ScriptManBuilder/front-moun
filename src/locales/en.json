@@ -1,0 +1,286 @@
+{
+  "header": {
+    "logo": "MOUN",
+    "subtitle": "DIGITAL AGENCY",
+    "language": "EN",
+    "contactUs": "Contact Us"
+  },
+  "hero": {
+    "title": "We turn your ideas into unique websites",
+    "subtitle": "Quickly, efficiently, reliably",
+    "cta": "To order a site"
+  },
+  "services": {
+    "cards": {
+      "onePageWebsite": {
+        "title": "One-Page Website",
+        "description": "A modern, sleek single-page site to showcase your product or service. Perfect for a fast launch and focused online presence.",
+        "price": "600$",
+        "button": "Order"
+      },
+      "onlineStore": {
+        "title": "Online Store",
+        "description": "Turn visitors into buyers with a fully functional online store. Manage products easily and sell around the clock.",
+        "price": "1400$",
+        "button": "Order"
+      },
+      "portfolioSite": {
+        "title": "Portfolio/Business Card Site",
+        "description": "Present your skills or services professionally. Ideal for freelancers, creatives, and businesses wanting to make a strong first impression.",
+        "price": "500$",
+        "button": "Order"
+      },
+      "customProgram": {
+        "title": "Custom Program/Script",
+        "description": "Get a tailored program or script built for your specific needs — automation, data collection, integrations, and more.",
+        "price": "500$",
+        "button": "Order"
+      },
+      "landingPage": {
+        "title": "Landing Page",
+        "description": "High-converting landing page designed to grab attention and drive action. Great for marketing campaigns and product launches.",
+        "price": "800$",
+        "button": "Order"
+      },
+      "customWebsite": {
+        "title": "Custom Website",
+        "description": "A fully customized website built around your brand, goals, and audience. Unique design and responsive across all devices.",
+        "price": "500$",
+        "button": "Order"
+      }
+    },
+    "pricePrefix": "from"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us? 🤔",
+    "features": {
+      "skilledTeam": {
+        "icon": "👨‍💻",
+        "title": "Skilled Team",
+        "description": "Our developers have hands-on experience across 20+ industries. We provide tested, practical solutions tailored to your specific business goals — from startups to large enterprises."
+      },
+      "tailoredSolutions": {
+        "icon": "✍️",
+        "title": "Tailored Solutions",
+        "description": "Every project starts with research and competitor analysis. We create a personalized strategy that fits your brand, audience, and market."
+      },
+      "realWorldExperience": {
+        "icon": "🎯",
+        "title": "Real-World Experience",
+        "description": "With over 100 completed projects, we've delivered results in real estate, e-commerce, logistics, healthcare, and more. We build what works — not just what looks good."
+      },
+      "alwaysEvolving": {
+        "icon": "🚀",
+        "title": "Always Evolving",
+        "description": "We stay ahead of trends by constantly learning and applying the latest technologies, ensuring your solution stays relevant in a fast-changing digital world."
+      },
+      "transparentProcess": {
+        "icon": "🎨",
+        "title": "Transparent Process",
+        "description": "With 2+ years in digital strategy, we deliver clear reports, open communication, and measurable results. You always know what you're getting — and why it works."
+      },
+      "smartTechnology": {
+        "icon": "💪",
+        "title": "Smart Technology",
+        "description": "We use modern tools and data-driven methods to supercharge your marketing, optimize performance, and help your business grow faster."
+      }
+    }
+  },
+  "ourApproach": {
+    "title": "Our Effective Approach",
+    "subtitle": "Steps that help you create a project without unnecessary stress",
+    "steps": {
+      "websiteCreation": {
+        "icon": "💻",
+        "title": "Website creation with unique UX/UI design",
+        "description": "We develop modern, visually appealing websites with a focus on usability and conversion. Your brand will stand out and your users will enjoy a seamless experience on any device."
+      },
+      "seoOptimization": {
+        "icon": "🔍",
+        "title": "SEO optimization",
+        "description": "We optimize your website for search engines, ensuring high rankings and organic traffic growth. Our SEO strategies help your business get discovered by your target audience."
+      },
+      "promotionSetup": {
+        "icon": "📣",
+        "title": "Setup and launch of promotion",
+        "description": "We create and manage advertising campaigns across Google, Facebook, Instagram, and other platforms to attract new customers and boost your online presence."
+      },
+      "salesGrowth": {
+        "icon": "📈",
+        "title": "Sales and leads growth",
+        "description": "We help you increase sales and leads, while reducing advertising costs and scaling results from your marketing investments."
+      },
+      "technicalSupport": {
+        "icon": "🛠️",
+        "title": "Technical support and updates",
+        "description": "We provide ongoing technical support, regular updates, and quick troubleshooting to keep your website running smoothly and securely."
+      },
+      "analyticsReporting": {
+        "icon": "📊",
+        "title": "Analytics and reporting",
+        "description": "We track key metrics and provide clear, actionable reports so you can see your progress and make informed business decisions."
+      }
+    }
+  },
+  "ourStack": {
+    "title": "Development technologies we work with",
+    "subtitle": "The power of code is in our developers' hands",
+    "portfolio": {
+      "title": "What We Create"
+    }
+  },
+  "discuss": {
+    "title": "Let's discuss your project",
+    "subtitle": "Share your ideas with our experts and get a free consultation on your digital solution",
+    "form": {
+      "namePlaceholder": "Your name",
+      "phonePlaceholder": "Phone number",
+      "commentPlaceholder": "Your comment",
+      "additionalServices": "Additional services",
+      "servicesSelected": "service",
+      "submitButton": "Send",
+      "countrySearchPlaceholder": "Search Country Name",
+      "phoneError": "Please enter only numbers",
+      "formError": "Please fix the errors in the form before submitting.",
+      "phoneOnlyNumbers": "Please enter only numbers in phone field."
+    },
+    "services": {
+      "webDesign": "Web design",
+      "development": "Development",
+      "seoOptimization": "SEO Optimization",
+      "digitalMarketing": "Digital Marketing",
+      "technicalSupport": "Technical Support"
+    },
+    "alerts": {
+      "success": "Your message has been sent successfully!",
+      "error": "An error occurred while sending your message. Please try again."
+    }
+  },
+  "workStages": {
+    "title": "Important stages",
+    "subtitle": "of the beginning of half-time work",
+    "description": "Steps to help create a stress-free project",
+    "stages": {
+      "introduction": {
+        "number": "01",
+        "title": "Introduction and initial briefing",
+        "description": "We'll start with a discovery call to dive into your goals, ideas, and expectations — this helps us understand the big picture from the start."
+      },
+      "audit": {
+        "number": "02",
+        "title": "Audit & Business Analysis",
+        "description": "If you already have a website, we'll analyze it along with your niche and competitors to identify what can be improved and what will set you apart."
+      },
+      "proposal": {
+        "number": "03",
+        "title": "Tailored Proposal",
+        "description": "Based on all insights and your completed brief, we'll provide a clear estimate for time, budget, and the best solution for your business."
+      },
+      "planning": {
+        "number": "04",
+        "title": "Project Planning & Agreement",
+        "description": "We'll sign a detailed agreement that outlines all key stages, timelines, and payment terms — so you know exactly what to expect."
+      },
+      "development": {
+        "number": "05",
+        "title": "Design & Development",
+        "description": "You'll get regular updates throughout the process. We'll share progress, gather your feedback, and adjust based on your vision."
+      },
+      "launch": {
+        "number": "06",
+        "title": "Testing & Launch",
+        "description": "Once development is complete, we'll run full testing to ensure everything works smoothly. Then we launch and hand over full access with clear instructions."
+      }
+    }
+  },
+  "consultation": {
+    "title": "Sign up for a consultation",
+    "features": {
+      "qualityGuarantee": "Quality guarantee",
+      "workForResults": "We work for results",
+      "teamOfExperts": "Team of experts",
+      "yourSuccess": "Your success is our goal"
+    }
+  },
+  "roadmap": {
+    "mainTitle": "Important stages",
+    "subTitle": "of the beginning of half-time work",
+    "description": "Steps to help create a stress-free project",
+    "steps": [
+      {
+        "title": "Introduction and initial briefing",
+        "description": "We'll start with a discovery call to dive into your goals, ideas, and expectations — this helps us understand the big picture from the start."
+      },
+      {
+        "title": "Audit & Business Analysis",
+        "description": "If you already have a website, we'll analyze it along with your niche and competitors to identify what can be improved and what will set you apart."
+      },
+      {
+        "title": "Tailored Proposal",
+        "description": "Based on all insights and your completed brief, we'll provide a clear estimate for time, budget, and the best solution for your business."
+      },
+      {
+        "title": "Project Planning & Agreement",
+        "description": "We'll sign a detailed agreement that outlines all key stages, timelines, and payment terms — so you know exactly what to expect."
+      },
+      {
+        "title": "Design & Development",
+        "description": "You'll get regular updates throughout the process. We'll share progress, gather your feedback, and adjust based on your vision."
+      },
+      {
+        "title": "Testing & Launch",
+        "description": "Once development is complete, we'll run full testing to ensure everything works smoothly. Then we launch and hand over full access with clear instructions."
+      }
+    ],
+    "consultation": {
+      "qualityGuarantee": "Quality guarantee",
+      "workForResults": "We work for results",
+      "teamOfExperts": "Team of experts",
+      "yourSuccess": "Your success is our goal"
+    }
+  },
+  "orderButton": {
+    "signUpConsultation": "Sign up for a consultation"
+  },
+  "footer": {
+    "copyright": "© 2025 Moun Digital Agency"
+  },
+  "contactModal": {
+    "title": {
+      "mainText": "Leave your details",
+      "subText": "and our manager will contact you soon"
+    },
+    "form": {
+      "namePlaceholder": "Your name",
+      "phonePlaceholder": "Phone number",
+      "commentPlaceholder": "Your comment",
+      "additionalServices": "Additional services",
+      "countrySearchPlaceholder": "Country search...",
+      "phoneOnlyNumbers": "⚠️ Only numbers are allowed in phone field",
+      "sending": "Sending...",
+      "send": "Send"
+    },
+    "services": {
+      "seoOptimization": "SEO optimization",
+      "webDesign": "Web design",
+      "websiteDevelopment": "Website development",
+      "digitalMarketing": "Digital Marketing",
+      "consultations": "Consultations"
+    },
+    "messages": {
+      "successSent": "Your application has been successfully sent!",
+      "errorOccurred": "An error occurred while sending the application",
+      "serverError": "Error connecting to the server. Try later"
+    },
+    "telegram": {
+      "orChooseMessenger": "Or choose a messenger to communicate:",
+      "telegramButton": "📱 Telegram"
+    }
+  },
+  "modal": {
+    "title": "Contact Us",
+    "subtitle": "Fill out the form and we will contact you soon",
+    "telegram": "Write to Telegram",
+    "close": "Close"
+  }
+}
