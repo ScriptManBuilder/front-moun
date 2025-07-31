@@ -14,13 +14,13 @@ const Footer: React.FC = () => (
     <FooterTitle>© 2025 Moun Digital Agency</FooterTitle>
     <FooterIcons>
       <FooterIconLink href="https://www.instagram.com/moun_digital_agency" target="_blank" rel="noopener noreferrer">
-        <FaInstagram />
+        {React.createElement(FaInstagram as any)}
       </FooterIconLink>
       <FooterIconLink href="https://www.tiktok.com/@moun.digital.agen" target="_blank" rel="noopener noreferrer">
-        <SiTiktok />
+        {React.createElement(SiTiktok as any)}
       </FooterIconLink>
       <FooterIconLink href="https://t.me/moun_digital" target="_blank" rel="noopener noreferrer">
-        <FaTelegramPlane />
+        {React.createElement(FaTelegramPlane as any)}
       </FooterIconLink>
     </FooterIcons>
   </FooterWrapper>

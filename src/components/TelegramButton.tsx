@@ -40,7 +40,10 @@ const TelegramButton: React.FC = () => {
 
   return (
     <ButtonContainer>
-      <FaTelegramPlane className="icon" onClick={handleClick} />
+      {React.createElement(FaTelegramPlane as any, { 
+        className: "icon", 
+        onClick: handleClick 
+      })}
     </ButtonContainer>
   );
 };

@@ -42,19 +42,19 @@ const Roadmap: React.FC = () => {
   const getStepIcon = (stepNumber: string) => {
     switch (stepNumber) {
       case '01':
-        return <FaHandshake />;
+        return React.createElement(FaHandshake as any);
       case '02':
-        return <FaSearch />;
+        return React.createElement(FaSearch as any);
       case '03':
-        return <FiFileText />;
+        return React.createElement(FiFileText as any);
       case '04':
-        return <FaLaptopCode />;
+        return React.createElement(FaLaptopCode as any);
       case '05':
-        return <FiCode />;
+        return React.createElement(FiCode as any);
       case '06':
-        return <FaRocket />;
+        return React.createElement(FaRocket as any);
       default:
-        return <FiGlobe />;
+        return React.createElement(FiGlobe as any);
     }
   };
   
@@ -137,7 +137,7 @@ const Roadmap: React.FC = () => {
               
               {step.isHighlighted && (
                 <SwitchContainer>
-                  <BsCameraVideoFill  color="white" />
+                  {React.createElement(BsCameraVideoFill as any, { color: "white" })}
                 </SwitchContainer>
               )}
             </StepCard>
