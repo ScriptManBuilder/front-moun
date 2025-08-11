@@ -1,5 +1,130 @@
 import styled from "styled-components";
 
+// Services section container with title
+export const ServicesSection = styled.section`
+  padding: 50px 0;
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  
+  /* Subtle background pattern */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(76, 175, 80, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(46, 125, 50, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  @media (min-width: 1440px) {
+    padding: 60px 0;
+  }
+  
+  @media (max-width: 425px) {
+    padding: 35px 0;
+  }
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  font-weight: 800;
+  color: #111827;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  
+  /* Elegant underline */
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #00d4aa 0%, #96e6a1 50%, #d4fc79 100%);
+    border-radius: 2px;
+    opacity: 0.9;
+    box-shadow: 0 2px 8px rgba(0, 212, 170, 0.3);
+  }
+  
+  /* Hover effect */
+  &:hover::after {
+    opacity: 1;
+    box-shadow: 0 4px 16px rgba(0, 212, 170, 0.4);
+    transform: translateX(-50%) scale(1.05);
+    transition: all 0.3s ease;
+  }
+  
+  @media (min-width: 1440px) {
+    font-size: 2.7rem;
+    margin-bottom: 35px;
+    
+    &::after {
+      width: 140px;
+      height: 4px;
+      bottom: -12px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 2.1rem;
+    margin-bottom: 25px;
+    padding: 0 20px;
+    max-width: 600px;
+    
+    &::after {
+      width: 100px;
+      height: 3px;
+      bottom: -8px;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    width: 90%;
+    
+    &::after {
+      width: 80px;
+      height: 3px;
+      bottom: -6px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    font-size: 1.7rem;
+    padding: 0;
+  }
+  
+  @media (max-width: 320px) {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    width: 95%;
+    
+    &::after {
+      width: 70px;
+      height: 3px;
+    }
+  }
+`;
+
 // Toggle switch component that reacts to button hover
 export const ToggleSwitch = styled.div<{ isOn?: boolean; isButtonHovered?: boolean }>`
   position: absolute;

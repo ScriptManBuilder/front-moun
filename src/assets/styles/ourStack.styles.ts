@@ -32,13 +32,41 @@ export const Title = styled.h1`
   font-size: 2.5rem;
   font-weight: bold;
   color: #333;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 15px;
+  
+  /* Добавляем стильное подчеркивание */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #00d4aa, #96e6a1);
+    border-radius: 2px;
+  }
 
   @media (max-width: 768px) {
     font-size: 2rem;
+    padding-bottom: 12px;
+    
+    &::after {
+      width: 80px;
+      height: 3px;
+    }
   }
 
   @media (max-width: 480px) {
     font-size: 1.8rem;
+    padding-bottom: 10px;
+    
+    &::after {
+      width: 60px;
+      height: 2px;
+    }
   }
 `;
 
@@ -235,7 +263,7 @@ export const PortfolioTitle = styled.h2`
     left: 0;
     width: 80px;
     height: 3px;
-    background: #333;
+    background: linear-gradient(90deg, #00d4aa, #96e6a1);
   }
 
   b {
@@ -253,6 +281,7 @@ export const PortfolioTitle = styled.h2`
     &::before {
       width: 60px;
       height: 3px;
+      background: linear-gradient(90deg, #00d4aa, #96e6a1);
     }
   }
   
@@ -264,6 +293,7 @@ export const PortfolioTitle = styled.h2`
     &::before {
       width: 50px;
       height: 2px;
+      background: linear-gradient(90deg, #00d4aa, #96e6a1);
     }
   }
 `;

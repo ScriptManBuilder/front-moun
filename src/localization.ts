@@ -25,6 +25,7 @@ export interface ServiceCardContent {
 }
 
 export interface ServicesLocaleContent {
+  title: string;
   cards: {
     onePageWebsite: ServiceCardContent;
     onlineStore: ServiceCardContent;
@@ -156,6 +157,72 @@ export interface ContactModalLocaleContent {
   };
 }
 
+export interface CalculatorLocaleContent {
+  title: string;
+  subtitle: string;
+  siteType: {
+    label: string;
+    options: {
+      single: string;
+      landing: string;
+      business: string;
+      corporate: string;
+      ecommerce: string;
+      custom: string;
+    };
+  };
+  pageCount: {
+    label: string;
+    unit: string;
+  };
+  design: {
+    label: string;
+    options: {
+      template: string;
+      unique: string;
+      premium: string;
+    };
+  };
+  additionalServices: {
+    label: string;
+    options: {
+      support: string;
+      seo: string;
+      content: string;
+      analytics: string;
+    };
+  };
+  result: {
+    title: string;
+    onetime: string;
+    disclaimer: string;
+    button: string;
+  };
+}
+
+export interface FAQQuestionContent {
+  question: string;
+  answer: string;
+}
+
+export interface FAQQuoteContent {
+  text: string;
+  author: string;
+}
+
+export interface FAQLocaleContent {
+  title: string;
+  subtitle: string;
+  questions: {
+    developmentTime: FAQQuestionContent;
+    developmentStages: FAQQuestionContent;
+    maintenanceSupport: FAQQuestionContent;
+    technologiesUsed: FAQQuestionContent;
+    projectChanges: FAQQuestionContent;
+  };
+  quote: FAQQuoteContent;
+}
+
 export interface LocaleContent {
   header: HeaderLocaleContent;
   hero: HeroLocaleContent;
@@ -167,6 +234,8 @@ export interface LocaleContent {
   roadmap: RoadmapLocaleContent;
   orderButton: OrderButtonLocaleContent;
   contactModal: ContactModalLocaleContent;
+  calculator: CalculatorLocaleContent;
+  faq: FAQLocaleContent;
 }
 
 // Функция для получения локализации из локальных файлов

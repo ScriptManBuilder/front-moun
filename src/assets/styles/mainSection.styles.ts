@@ -345,22 +345,29 @@ export const MainWrapper = styled.div`
 `;
 
 export const MainHeading = styled.h1`
-  font-size: 2.8rem; /* Увеличиваем размер заголовка */
-  font-weight: 700; /* Делаем заголовок более выразительным */
-  line-height: 1.4; /* Увеличиваем межстрочный интервал */
-  color: #000; /* Чёрный цвет текста */
-  text-align: center; /* Центрируем текст */
-  margin-bottom: 15px; /* Добавляем отступ снизу */
+  font-family: 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800; /* Более выразительный вес */
+  line-height: 1.2; /* Компактнее для заголовков */
+  letter-spacing: -0.02em; /* Современный трекинг */
+  color: #1a1a1a; /* Более мягкий черный */
+  text-align: center;
+  margin-bottom: 15px;
   width: 100%;
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   
   @media (min-width: 1024px) {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin: 0 auto 20px;
+    line-height: 1.15;
   }
   
   @media (min-width: 1440px) {
-    font-size: 3.2rem;
+    font-size: 3.6rem;
+    line-height: 1.1;
   }
 
   @media (max-width: 768px) {
@@ -393,24 +400,31 @@ export const MainHeading = styled.h1`
 `;
 
 export const MainSubheading = styled.p`
-  font-size: 1.4rem; /* Уменьшаем размер подзаголовка для баланса */
-  font-weight: 400; /* Обычный текст */
-  line-height: 1.4; /* Межстрочный интервал для читаемости */
-  color: #555; /* Серый цвет текста */
-  text-align: center; /* Центрируем текст */
-  margin-top: 10px; /* Уменьшаем отступ сверху */
-  margin-bottom: 20px; /* Добавляем отступ снизу для кнопки */
+  font-family: 'SF Pro Text', 'Segoe UI', 'Roboto', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500; /* Средний вес для подзаголовка */
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #4a5568; /* Более мягкий серый */
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
   width: 100%;
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   
   @media (min-width: 1024px) {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin: 10px auto 25px;
+    line-height: 1.4;
   }
   
   @media (min-width: 1440px) {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     margin: 15px auto 30px;
+    line-height: 1.45;
   }
 
   @media (max-width: 768px) {

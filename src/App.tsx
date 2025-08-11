@@ -11,7 +11,9 @@ import OurStack from './components/ourStack';
 import Roadmap from './components/roadmap';
 import TelegramButton from './components/TelegramButton';
 import Discuss from './components/discuss';
+import CalculatorPrice from './components/calculatorPrice';
 import { LocaleProvider } from './LocaleContext';
+import FAQ from './components/faq';
 
 
 
@@ -23,14 +25,16 @@ function App() {
         <Header />
         <main>
           <MainSection />
-         
+         <CalculatorPrice />
           <ServiceCards />
           <WhyChoseUs />
           <OurApproach />
           <OurStack />
+          
           <Discuss />
           <Roadmap />
-         
+          <FAQ />
+      
           <TelegramButton />  
         
           

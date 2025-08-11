@@ -11,6 +11,7 @@
     "cta": "To order a site"
   },
   "services": {
+    "title": "Professional Solutions for Everyone",
     "cards": {
       "onePageWebsite": {
         "title": "One-Page Website",
@@ -275,6 +276,78 @@
     "telegram": {
       "orChooseMessenger": "Or choose a messenger to communicate:",
       "telegramButton": "📱 Telegram"
+    }
+  },
+  "calculator": {
+    "title": "Calculate Website Cost",
+    "subtitle": "Specify the parameters of your future website and get an estimated cost",
+    "siteType": {
+      "label": "Site Type",
+      "options": {
+        "single": "Single Page Website",
+        "landing": "Landing Page",
+        "business": "Business Card Site",
+        "corporate": "Corporate Website",
+        "ecommerce": "Online Store",
+        "custom": "Complex Project"
+      }
+    },
+    "pageCount": {
+      "label": "Number of Pages",
+      "unit": "pages"
+    },
+    "design": {
+      "label": "Design",
+      "options": {
+        "template": "Template-based",
+        "unique": "Individual (unique design)",
+        "premium": "Premium Design"
+      }
+    },
+    "additionalServices": {
+      "label": "Additional Services",
+      "options": {
+        "support": "Technical Support",
+        "seo": "SEO Optimization",
+        "content": "Content Filling",
+        "analytics": "Analytics Setup"
+      }
+    },
+    "result": {
+      "title": "Estimated Cost:",
+      "onetime": "one-time",
+      "disclaimer": "* Please confirm the exact cost with the manager",
+      "button": "Get Commercial Proposal"
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Answers to the most common questions about website development",
+    "questions": {
+      "developmentTime": {
+        "question": "How long does it take to create a website?",
+        "answer": "Development time depends on project complexity. A simple landing page can be ready in 1-2 weeks, while a complex e-commerce site may take 1-2 months."
+      },
+      "developmentStages": {
+        "question": "What are the website development stages?",
+        "answer": "Development includes: requirements analysis, design mockup creation, layout, functionality programming, testing, content filling, and project launch."
+      },
+      "maintenanceSupport": {
+        "question": "Do you provide website maintenance services?",
+        "answer": "Yes, we provide a full range of technical support services: content updates, backups, security monitoring, and technical issue resolution."
+      },
+      "technologiesUsed": {
+        "question": "What technologies do you use?",
+        "answer": "We work with modern technologies: JavaScript, TypeScript, React, Node.js, Nest.js, MongoDB, PostgreSQL and many others depending on project needs."
+      },
+      "projectChanges": {
+        "question": "Can I make changes to the project during development?",
+        "answer": "Absolutely! We are always open to client changes and suggestions. It's important to discuss changes in advance so they don't affect timelines and budget."
+      }
+    },
+    "quote": {
+      "text": "Together with us, let's elevate your project to MOUN. Ready to take the step?",
+      "author": "MOUN Digital Team"
     }
   },
   "modal": {

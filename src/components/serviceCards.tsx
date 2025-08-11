@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { 
+  ServicesSection,
+  SectionTitle,
   CardsContainer, 
   CardWrapper, 
   CardTitle, 
@@ -75,7 +77,12 @@ const ServiceCards: React.FC = () => {
   };
 
   return (
-    <CardsContainer>
+    <ServicesSection>
+      <SectionTitle>
+        {localeContent?.services?.title || "Professional Solutions for Everyone"}
+      </SectionTitle>
+      
+      <CardsContainer>
       {cards.map((card, index) => {
         const isButtonHovered = hoveredCardIndex === index;
         const isSpecialCard = index === 3; // 4-я карточка (Corporate Website)
@@ -115,10 +122,11 @@ const ServiceCards: React.FC = () => {
           </CardWrapper>
         );
       })}
+      </CardsContainer>
       
       {/* Компонент модального окна */}
       <ContactModal isOpen={isModalOpen} onClose={handleCloseModal} />
-    </CardsContainer>
+    </ServicesSection>
   );
 };
 
