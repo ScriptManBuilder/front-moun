@@ -355,6 +355,14 @@ export const PortfolioItem = styled.div`
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
   @media (max-width: 768px) {
     height: 200px;
   }

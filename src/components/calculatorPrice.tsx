@@ -69,10 +69,10 @@ const CalculatorPrice: React.FC = () => {
   ];
 
   const additionalServices: AdditionalService[] = [
-    { id: 'support', name: localeContent?.calculator.additionalServices.options.support || 'Technical Support', price: 125, unit: '$/month' },
-    { id: 'seo', name: localeContent?.calculator.additionalServices.options.seo || 'SEO Optimization', price: 125 },
-    { id: 'content', name: localeContent?.calculator.additionalServices.options.content || 'Content Filling', price: 75 },
-    { id: 'analytics', name: localeContent?.calculator.additionalServices.options.analytics || 'Analytics Setup', price: 62 }
+    { id: 'support', name: localeContent?.calculator.additionalServices.options.support || 'Technical Support', price: 100, unit: '$/month' },
+    { id: 'seo', name: localeContent?.calculator.additionalServices.options.seo || 'SEO Optimization', price: 75 },
+    { id: 'content', name: localeContent?.calculator.additionalServices.options.content || 'Content Filling', price: 60 },
+    { id: 'analytics', name: localeContent?.calculator.additionalServices.options.analytics || 'Analytics Setup', price: 50 }
   ];
 
   const handleServiceChange = (serviceId: string) => {

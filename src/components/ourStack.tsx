@@ -19,7 +19,7 @@ import {
 const OurStack: React.FC = () => {
   const { localeContent } = useLocale();
   
-  // Все 13 изображений из вашего GitHub репозитория в чередующемся порядке (обычные и p-версии)
+  // Все изображения из вашего GitHub репозитория
   const allImages = [
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img1.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img1p.png',
@@ -33,8 +33,65 @@ const OurStack: React.FC = () => {
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img5p.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img6.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img6p.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img7p.png'
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img7p.png',
+
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/pizzaJ12.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/calcuat.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/locksmith8.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/bark.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/cointre0.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/profile10.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/faq.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/moneycase9.png',
+
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/blog3.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/locktg.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/coimtree.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/roadmap.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/lockSmith11.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/cards.png'
+
   ];
+
+  // Объект с соответствием изображений и их URL
+  const imageLinks: { [key: string]: string } = {
+    // Password Generator
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img1p.png': 'https://password-generator-site-tau.vercel.app/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img2p.png': 'https://password-generator-site-tau.vercel.app/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img3p.png': 'https://password-generator-site-tau.vercel.app/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img4p.png': 'https://password-generator-site-tau.vercel.app/chatbot',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img5p.png': 'https://password-generator-site-tau.vercel.app/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img6p.png': 'https://password-generator-site-tau.vercel.app/contact',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img7p.png': 'https://password-generator-site-tau.vercel.app/',
+    // Book Store
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img1.png': 'https://book-st0re.vercel.app/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img2.png': 'https://book-st0re.vercel.app/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img3.png': 'https://book-st0re.vercel.app/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img4.png': 'https://book-st0re.vercel.app/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img5.png': 'https://book-st0re.vercel.app/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img6.png': 'https://book-st0re.vercel.app/',
+    // Cointree
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/coimtree.png': 'https://www.cointree.com/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/cointre0.png': 'https://www.cointree.com/',
+    // QuantaTech
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/blog3.png': 'https://quantatech.net/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/profile10.png': 'https://quantatech.net/',
+    // MoneyCase
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/moneycase9.png': 'https://moneycase.com.ua/',
+    // Locksmith
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/locksmith8.png': 'https://www.locksmithmp.com/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/cards.png': 'https://www.locksmithmp.com/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/locktg.png': 'https://www.locksmithmp.com/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/lockSmith11.png': 'https://www.locksmithmp.com/',
+    // Papa John's
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/pizzaJ12.png': 'https://www.papajohns.cl/pizzas/',
+    // MounWeb
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/calcuat.png': 'https://mounweb.com/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/roadmap.png': 'https://mounweb.com/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/faq.png': 'https://mounweb.com/',
+    // Bark
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/bark.png': 'https://bark.com/'
+  };
 
   // Состояние для отслеживания текущего индекса слайдшоу
   const [currentImageSet, setCurrentImageSet] = useState(0);
@@ -44,9 +101,11 @@ const OurStack: React.FC = () => {
     const result = [];
     for (let i = 0; i < 6; i++) {
       const imageIndex = (currentImageSet + i) % allImages.length;
+      const imageUrl = allImages[imageIndex];
       result.push({
         id: i + 1,
-        imageUrl: allImages[imageIndex]
+        imageUrl: imageUrl,
+        linkUrl: imageLinks[imageUrl] || null
       });
     }
     return result;
@@ -113,7 +172,13 @@ const OurStack: React.FC = () => {
         <PortfolioGrid>
           {portfolioItems.map((item) => (
             <PortfolioItem key={item.id}>
-              <PortfolioImage imageUrl={item.imageUrl} />
+              {item.linkUrl ? (
+                <a href={item.linkUrl} target="_blank" rel="noopener noreferrer">
+                  <PortfolioImage imageUrl={item.imageUrl} />
+                </a>
+              ) : (
+                <PortfolioImage imageUrl={item.imageUrl} />
+              )}
             </PortfolioItem>
           ))}
         </PortfolioGrid>
