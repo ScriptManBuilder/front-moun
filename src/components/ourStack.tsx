@@ -40,11 +40,11 @@ const OurStack: React.FC = () => {
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/locksmith8.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/bark.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/cointre0.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/profile10.png',
+
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/faq.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/moneycase9.png',
 
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/blog3.png',
+   
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/locktg.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/coimtree.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/roadmap.png',
@@ -73,10 +73,10 @@ const OurStack: React.FC = () => {
     // Cointree
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/coimtree.png': 'https://www.cointree.com/',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/cointre0.png': 'https://www.cointree.com/',
-    // QuantaTech
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/blog3.png': 'https://quantatech.net/',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/profile10.png': 'https://quantatech.net/',
-    // MoneyCase
+    // // QuantaTech
+    // 'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/blog3.png': 'https://quantatech.net/',
+    // 'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/profile10.png': 'https://quantatech.net/',
+    // // MoneyCase
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/moneycase9.png': 'https://moneycase.com.ua/',
     // Locksmith
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/locksmith8.png': 'https://www.locksmithmp.com/',
