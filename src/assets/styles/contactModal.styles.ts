@@ -6,74 +6,196 @@ export const ModalOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
+  background: 
+    radial-gradient(circle at 30% 80%, rgba(0, 212, 170, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(150, 230, 161, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(212, 252, 121, 0.08) 0%, transparent 50%),
+    rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999999;
   padding: 20px;
-  animation: fadeIn 0.3s ease-out;
+  animation: premiumFadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   
-  @keyframes fadeIn {
+  /* Улучшенная адаптивность для маленьких экранов */
+  @media (max-width: 420px) {
+    padding: 12px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+  
+  @media (max-width: 360px) {
+    padding: 8px;
+    padding-top: 16px;
+  }
+  
+  @media (max-height: 640px) {
+    align-items: flex-start;
+    padding-top: 16px;
+  }
+  
+  @media (max-height: 568px) {
+    padding-top: 12px;
+  }
+  
+  @keyframes premiumFadeIn {
     from {
       opacity: 0;
+      backdrop-filter: blur(0px) saturate(100%);
     }
     to {
       opacity: 1;
+      backdrop-filter: blur(16px) saturate(180%);
     }
   }
 `;
 
 export const ModalContainer = styled.div`
-  background: white;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
   width: 100%;
   max-width: 480px;
   max-height: 85vh;
   overflow-y: auto;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  animation: slideUp 0.3s ease-out;
+  box-shadow: 
+    0 32px 64px rgba(0, 0, 0, 0.12),
+    0 16px 32px rgba(0, 212, 170, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  animation: premiumSlideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   z-index: 1000000;
+  border: 1px solid rgba(0, 212, 170, 0.1);
   
-  @keyframes slideUp {
+  /* Добавляем тонкий внутренний градиент */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 212, 170, 0.02) 0%,
+      rgba(150, 230, 161, 0.01) 50%,
+      rgba(212, 252, 121, 0.02) 100%
+    );
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  @keyframes premiumSlideUp {
     from {
-      transform: translateY(50px);
+      transform: translateY(60px) scale(0.96);
       opacity: 0;
+      filter: blur(8px);
     }
     to {
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
       opacity: 1;
+      filter: blur(0);
     }
   }
   
   @media (max-width: 480px) {
-    max-width: calc(100vw - 40px);
-    border-radius: 16px;
+    max-width: calc(100vw - 24px);
+    border-radius: 20px;
+    max-height: 90vh;
+    
+    &::before {
+      border-radius: 20px;
+    }
   }
   
-  @media (max-height: 600px) {
-    max-height: 80vh;
+  @media (max-width: 420px) {
+    max-width: calc(100vw - 16px);
+    border-radius: 18px;
+    max-height: 92vh;
+    
+    &::before {
+      border-radius: 18px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    max-width: calc(100vw - 12px);
+    border-radius: 16px;
+    max-height: 94vh;
+    
+    &::before {
+      border-radius: 16px;
+    }
+  }
+  
+  @media (max-height: 640px) {
+    max-height: 88vh;
+  }
+  
+  @media (max-height: 568px) {
+    max-height: 92vh;
+  }
+  
+  @media (max-height: 480px) {
+    max-height: 95vh;
   }
 `;
 
 export const ModalHeader = styled.div`
-  padding: 30px 30px 20px;
+  padding: 32px 32px 24px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid rgba(0, 212, 170, 0.08);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(250, 250, 250, 0.4) 100%
+  );
+  backdrop-filter: blur(10px);
+  position: relative;
+  
+  /* Добавляем тонкое свечение сверху */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 212, 170, 0.3),
+      transparent
+    );
+  }
   
   @media (max-width: 480px) {
-    padding: 20px 20px 15px;
+    padding: 24px 20px 18px;
+  }
+  
+  @media (max-width: 420px) {
+    padding: 20px 16px 16px;
+  }
+  
+  @media (max-width: 360px) {
+    padding: 18px 14px 14px;
+  }
+  
+  @media (max-height: 568px) {
+    padding: 16px 20px 12px;
   }
 `;
 
 export const ModalTitle = styled.h2`
   font-size: 20px;
   font-weight: 700;
-  color: #23272f;
+  color: #111827;
   margin: 0;
   line-height: 1.3;
   text-align: center;
@@ -85,53 +207,113 @@ export const ModalTitle = styled.h2`
   /* Разделение текста на строки с разными стилями */
   span.main-text {
     display: block;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 800;
-    background: linear-gradient(135deg, #23272f 0%, #96e6a1 100%);
+    background: linear-gradient(135deg, #111827 0%, #00d4aa 50%, #96e6a1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    filter: drop-shadow(0 2px 4px rgba(0, 212, 170, 0.1));
   }
   
   span.sub-text {
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    color: #666;
+    color: #6B7280;
     opacity: 0.9;
+    background: rgba(107, 114, 128, 0.05);
+    padding: 4px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 212, 170, 0.1);
+    backdrop-filter: blur(5px);
   }
   
   @media (max-width: 480px) {
+    span.main-text {
+      font-size: 20px;
+    }
+    
+    span.sub-text {
+      font-size: 12px;
+      padding: 3px 10px;
+    }
+    
+    padding-right: 15px;
+  }
+  
+  @media (max-width: 420px) {
     span.main-text {
       font-size: 18px;
     }
     
     span.sub-text {
-      font-size: 14px;
+      font-size: 11px;
+      padding: 2px 8px;
     }
     
-    padding-right: 15px;
+    padding-right: 12px;
+  }
+  
+  @media (max-width: 360px) {
+    span.main-text {
+      font-size: 16px;
+    }
+    
+    span.sub-text {
+      font-size: 10px;
+      padding: 2px 6px;
+    }
+    
+    padding-right: 10px;
   }
 `;
 
 export const CloseButton = styled.button`
-  background: none;
-  border: none;
-  font-size: 28px;
-  color: #999;
+  background: rgba(107, 114, 128, 0.1);
+  border: 1px solid rgba(107, 114, 128, 0.2);
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #6B7280;
   cursor: pointer;
-  padding: 0;
-  line-height: 1;
-  transition: color 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   flex-shrink: 0;
+  backdrop-filter: blur(10px);
   
   &:hover {
-    color: #333;
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #EF4444;
+    transform: scale(1.05) rotate(90deg);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  }
+  
+  &:active {
+    transform: scale(0.95) rotate(90deg);
   }
   
   @media (max-width: 480px) {
-    font-size: 24px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  @media (max-width: 420px) {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 360px) {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
   }
 `;
 
@@ -140,6 +322,18 @@ export const ModalForm = styled.form`
   
   @media (max-width: 480px) {
     padding: 20px;
+  }
+  
+  @media (max-width: 420px) {
+    padding: 16px;
+  }
+  
+  @media (max-width: 360px) {
+    padding: 14px;
+  }
+  
+  @media (max-height: 568px) {
+    padding: 16px;
   }
 `;
 
@@ -158,73 +352,118 @@ export const FormLabel = styled.label`
 
 export const FormInput = styled.input`
   width: 100%;
-  padding: 18px 24px;
-  border: 2px solid #e0e0e0;
+  padding: 20px 24px;
+  border: 2px solid rgba(0, 212, 170, 0.12);
   border-radius: 16px;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
-  background: #fafafa;
+  color: #1F2937;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   box-sizing: border-box;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
   
   &:focus {
     outline: none;
-    border-color: #d4fc79;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(212, 252, 121, 0.1);
+    border-color: rgba(0, 212, 170, 0.5);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 
+      0 0 0 4px rgba(0, 212, 170, 0.1),
+      0 8px 24px rgba(0, 212, 170, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
   }
   
   &:hover:not(:focus) {
-    border-color: #c8c8c8;
+    border-color: rgba(0, 212, 170, 0.25);
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
   }
   
   &::placeholder {
-    color: #999;
+    color: #9CA3AF;
     font-weight: 400;
   }
   
   @media (max-width: 480px) {
-    padding: 16px 20px;
+    padding: 18px 20px;
     font-size: 16px;
+  }
+  
+  @media (max-width: 420px) {
+    padding: 16px 18px;
+    font-size: 16px;
+    border-radius: 14px;
+  }
+  
+  @media (max-width: 360px) {
+    padding: 14px 16px;
+    font-size: 16px;
+    border-radius: 12px;
   }
 `;
 
 export const FormTextarea = styled.textarea`
   width: 100%;
-  padding: 18px 24px;
-  border: 2px solid #e0e0e0;
+  padding: 20px 24px;
+  border: 2px solid rgba(0, 212, 170, 0.12);
   border-radius: 16px;
   font-size: 16px;
   font-weight: 500;
-  color: #333;
-  background: #fafafa;
+  color: #1F2937;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   box-sizing: border-box;
   font-family: inherit;
   resize: vertical;
   min-height: 120px;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
   
   &:focus {
     outline: none;
-    border-color: #d4fc79;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(212, 252, 121, 0.1);
+    border-color: rgba(0, 212, 170, 0.5);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 
+      0 0 0 4px rgba(0, 212, 170, 0.1),
+      0 8px 24px rgba(0, 212, 170, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
   }
   
   &:hover:not(:focus) {
-    border-color: #c8c8c8;
+    border-color: rgba(0, 212, 170, 0.25);
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
   }
   
   &::placeholder {
-    color: #999;
+    color: #9CA3AF;
     font-weight: 400;
   }
   
   @media (max-width: 480px) {
-    padding: 16px 20px;
+    padding: 18px 20px;
     font-size: 16px;
     min-height: 100px;
+  }
+  
+  @media (max-width: 420px) {
+    padding: 16px 18px;
+    font-size: 16px;
+    min-height: 90px;
+    border-radius: 14px;
+  }
+  
+  @media (max-width: 360px) {
+    padding: 14px 16px;
+    font-size: 16px;
+    min-height: 80px;
+    border-radius: 12px;
+  }
+  
+  @media (max-height: 568px) {
+    min-height: 70px;
   }
 `;
 
@@ -496,92 +735,177 @@ export const CountryItem = styled.li`
 export const SubmitButton = styled.button`
   width: 100%;
   display: inline-block;
-  padding: 16px 30px;
-  background: #23272f; /* Исходный цвет кнопки */
-  color: #fff; /* Белый текст */
-  border: 2px solid #23272f; /* Граница цвета начального фона */
-  border-radius: 20px;
+  padding: 18px 32px;
+  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 16px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  transition: background 0.8s ease, color 2s ease, opacity 0.3s ease; /* Плавный переход цвета за 2 секунды */
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
   font-family: 'Inter', 'Montserrat', 'Roboto', sans-serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Тёмная тень */
-  margin-bottom: 20px;
+  box-shadow: 
+    0 8px 32px rgba(31, 41, 55, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  margin-bottom: 8px; /* Еще более компактно */
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  
+  /* Добавляем анимированный градиент на hover */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #00d4aa 0%, #96e6a1 50%, #d4fc79 100%);
+    transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: -1;
+  }
 
   &:hover:not(:disabled) {
-    background: #d4fc79;
-    color: #23272f; /* Цвет текста при наведении */
-    box-shadow: 0 4px 16px rgba(224, 252, 55, 0.3); /* Более яркая тень */
-    border-color: #23272f; /* Граница остаётся цвета начального фона */
+    color: #1F2937;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+      0 16px 48px rgba(0, 212, 170, 0.25),
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(0, 212, 170, 0.3);
+    
+    &::before {
+      left: 0;
+    }
   }
   
   &:active:not(:disabled) {
-    transform: translateY(0);
+    transform: translateY(-1px) scale(1.01);
   }
   
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
-    background: #666;
-    border-color: #666;
+    background: linear-gradient(135deg, #6B7280 0%, #9CA3AF 100%);
+    transform: none;
+    
+    &::before {
+      display: none;
+    }
   }
 `;
 
 export const OrText = styled.div`
   text-align: center;
-  color: #666;
-  font-size: 14px;
-  margin: 20px 0 15px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 8px 0 6px;
   position: relative;
+  background: rgba(0, 212, 170, 0.08);
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  backdrop-filter: blur(8px);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   
   &::before,
   &::after {
     content: '';
     position: absolute;
     top: 50%;
-    width: 45%;
+    width: 30%;
     height: 1px;
-    background: #e0e0e0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 212, 170, 0.3),
+      transparent
+    );
   }
   
   &::before {
-    left: 0;
+    left: 8%;
   }
   
   &::after {
-    right: 0;
+    right: 8%;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 12px;
+    margin: 6px 0 4px;
+    padding: 4px 10px;
+    
+    &::before,
+    &::after {
+      width: 25%;
+    }
   }
 `;
 
 export const TelegramButton = styled.button`
   width: 100%;
   display: inline-block;
-  padding: 16px 40px;
+  padding: 18px 40px;
   background: linear-gradient(135deg, #0088cc 0%, #006fa8 100%);
   color: white;
-  border: 2px solid #0088cc;
-  border-radius: 32px;
-  font-size: 18px;
-  font-weight: 600;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   font-family: 'Inter', 'Montserrat', 'Roboto', sans-serif;
-  box-shadow: 0 4px 16px rgba(0, 136, 204, 0.25);
+  box-shadow: 
+    0 8px 32px rgba(0, 136, 204, 0.25),
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  margin-bottom: 8px; /* Добавляем небольшой отступ снизу */
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  
+  /* Добавляем shimmer эффект */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
   
   &:hover {
-    background: linear-gradient(135deg, #64b3f4 0%, #0088cc 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 136, 204, 0.3);
+    background: linear-gradient(135deg, #229ED9 0%, #0088cc 100%);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+      0 16px 48px rgba(0, 136, 204, 0.3),
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border-color: rgba(34, 158, 217, 0.3);
+    
+    &::before {
+      left: 100%;
+    }
   }
   
   &:active {
-    transform: translateY(0);
+    transform: translateY(-1px) scale(1.01);
   }
 `;
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocale } from '../LocaleContext';
+import { useAlert } from '../contexts/AlertContext';
 import { 
   ModalOverlay,
   ModalContainer,
@@ -81,6 +82,7 @@ const countries: Country[] = [
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const { localeContent } = useLocale();
+  const { showSuccessAlert, showErrorAlert } = useAlert();
   
   // Локализованный массив услуг
   const services = [
@@ -104,7 +106,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
   const [countrySearch, setCountrySearch] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
   const [phoneError, setPhoneError] = useState(false);
 
   const filteredCountries = countries.filter(country =>
@@ -176,7 +177,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitMessage(null);
 
     try {
       const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
@@ -205,10 +205,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        setSubmitMessage({ 
-          type: 'success', 
-          text: result.message || localeContent?.contactModal?.messages?.successSent || 'Your application has been successfully sent!' 
-        });
+        // Показываем красивый алерт об успехе
+        showSuccessAlert(
+          localeContent?.alert?.success?.messageSubmitted || 'Your message has been sent successfully. We will contact you soon!'
+        );
         
         // Очищаем форму при успешной отправке
         setFormData({
@@ -219,22 +219,20 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         });
         setSelectedServices([]);
         
-        // Закрываем модальное окно через 2 секунды
-        setTimeout(() => {
-          onClose();
-        }, 2000);
+        // Закрываем модальное окно
+        onClose();
       } else {
-        setSubmitMessage({ 
-          type: 'error', 
-          text: result.message || localeContent?.contactModal?.messages?.errorOccurred || 'An error occurred while sending the application' 
-        });
+        // Показываем алерт об ошибке
+        showErrorAlert(
+          result.message || localeContent?.alert?.error?.messageNotSubmitted || 'Failed to send message. Please try again later.'
+        );
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      setSubmitMessage({ 
-        type: 'error', 
-        text: localeContent?.contactModal?.messages?.serverError || 'Error connecting to the server. Try later' 
-      });
+      // Показываем алерт об ошибке подключения
+      showErrorAlert(
+        localeContent?.alert?.error?.messageNotSubmitted || 'Failed to send message. Please try again later.'
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -409,12 +407,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               (localeContent?.contactModal?.form?.send || 'Send')
             }
           </SubmitButton>
-
-          {submitMessage && (
-            <SubmitMessage type={submitMessage.type}>
-              {submitMessage.text}
-            </SubmitMessage>
-          )}
 
           <OrText>{localeContent?.contactModal?.telegram?.orChooseMessenger || "Or choose a messenger to communicate:"}</OrText>
 

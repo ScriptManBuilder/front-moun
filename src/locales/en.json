@@ -355,5 +355,21 @@
     "subtitle": "Fill out the form and we will contact you soon",
     "telegram": "Write to Telegram",
     "close": "Close"
+  },
+  "alert": {
+    "success": {
+      "title": "Success!",
+      "messageSubmitted": "Your message has been sent successfully. We will contact you soon!"
+    },
+    "error": {
+      "title": "Error",
+      "messageNotSubmitted": "Failed to send message. Please try again later."
+    },
+    "warning": {
+      "title": "Warning"
+    },
+    "info": {
+      "title": "Information"
+    }
   }
 }

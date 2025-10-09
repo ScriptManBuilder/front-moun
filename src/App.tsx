@@ -14,33 +14,40 @@ import Discuss from './components/discuss';
 import CalculatorPrice from './components/calculatorPrice';
 import { LocaleProvider } from './LocaleContext';
 import FAQ from './components/faq';
+import CustomCursor from './components/customCursor';
+import { AlertProvider } from './contexts/AlertContext';
+import AlertManager from './components/AlertManager';
 
 
 
 function App() {
   return (
     <LocaleProvider>
-      <div className="App">
-        <GlobalStyles />
-        <Header />
-        <main>
-          <MainSection />
-         <CalculatorPrice />
-          <ServiceCards />
-          <WhyChoseUs />
-          <OurApproach />
-          <OurStack />
-          
-          <Discuss />
-          <Roadmap />
-          <FAQ />
-      
-          <TelegramButton />  
+      <AlertProvider>
+        <div className="App">
+          <GlobalStyles />
+          <CustomCursor />
+          <AlertManager />
+          <Header />
+          <main>
+            <MainSection />
+           <CalculatorPrice />
+            <ServiceCards />
+            <WhyChoseUs />
+            <OurApproach />
+            <OurStack />
+            
+            <Discuss />
+            <Roadmap />
+            <FAQ />
         
+            <TelegramButton />  
           
-        </main>
-        <Footer />
-      </div>
+            
+          </main>
+          <Footer />
+        </div>
+      </AlertProvider>
     </LocaleProvider>
   );
 }

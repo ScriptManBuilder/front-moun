@@ -223,6 +223,23 @@ export interface FAQLocaleContent {
   quote: FAQQuoteContent;
 }
 
+export interface AlertLocaleContent {
+  success: {
+    title: string;
+    messageSubmitted: string;
+  };
+  error: {
+    title: string;
+    messageNotSubmitted: string;
+  };
+  warning: {
+    title: string;
+  };
+  info: {
+    title: string;
+  };
+}
+
 export interface LocaleContent {
   header: HeaderLocaleContent;
   hero: HeroLocaleContent;
@@ -236,6 +253,7 @@ export interface LocaleContent {
   contactModal: ContactModalLocaleContent;
   calculator: CalculatorLocaleContent;
   faq: FAQLocaleContent;
+  alert: AlertLocaleContent;
 }
 
 // Функция для получения локализации из локальных файлов
