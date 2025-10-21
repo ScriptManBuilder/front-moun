@@ -9,7 +9,11 @@ import {
   StepIcon,
   StepTitle,
   StepDescription,
-  StepArrow
+  StepArrow,
+  PresentationSection,
+  PresentationTitle,
+  PresentationDescription,
+  PresentationButton
 } from "../assets/styles/ourApproach.styles";
 
 const OurApproach: React.FC = () => {
@@ -57,6 +61,27 @@ const OurApproach: React.FC = () => {
           );
         })}
       </ApproachSteps>
+      
+      {/* Presentation Section */}
+      <PresentationSection>
+        <PresentationTitle 
+          dangerouslySetInnerHTML={{ 
+            __html: localeContent.ourApproach.presentation?.title || "Discover Our <span>Full Story</span>" 
+          }} 
+        />
+        <PresentationDescription>
+          {localeContent.ourApproach.presentation?.description || 
+            "Want to learn more about MOUN Digital Agency? Download our complete presentation with detailed information about our services, portfolio, and success stories."}
+        </PresentationDescription>
+        <PresentationButton 
+          href="https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/MounMainPresentation.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="pdf-icon">📄</span>
+          {localeContent.ourApproach.presentation?.buttonText || "Download Presentation"}
+        </PresentationButton>
+      </PresentationSection>
     </ApproachSection>
   );
 };

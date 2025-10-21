@@ -23,28 +23,34 @@ const OurStack: React.FC = () => {
   const allImages = [
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img1.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img1p.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/1.png', 
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/case20.png', // Mail-Learn
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img2.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img2p.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img3.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img3p.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img4.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img4p.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img5.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img5p.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img6.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img6p.png',
-    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img7p.png',
-
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/pizzaJ12.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/blogPy.png', // Python Learning
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img3.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/2.png', 
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img3p.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/case20_1.png', // Mail-Learn Blog
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img4.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/calcuat.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/webdesigncase.png', // Design Ecourses
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img4p.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/3.png', 
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img5.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/locksmith8.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/case20_2.png', // Mail-Learn Blog 2
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img5p.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/bark.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/wiloiams.png', // Willcol AI
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img6.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/4.png',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img6p.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/cointre0.png',
-
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img7p.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/faq.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/moneycase9.png',
-
-   
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/locktg.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/coimtree.png',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/roadmap.png',
@@ -55,6 +61,21 @@ const OurStack: React.FC = () => {
 
   // Объект с соответствием изображений и их URL
   const imageLinks: { [key: string]: string } = {
+    // TopRange Partners
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/1.png': 'https://www.toprangepartners.com/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/2.png': 'https://www.toprangepartners.com/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/3.png': 'https://www.toprangepartners.com/',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/4.png': 'https://www.toprangepartners.com/',
+    // Mail-Learn
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/case20.png': 'https://www.mail-learn.com/products',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/case20_1.png': 'https://www.mail-learn.com/blog',
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/case20_2.png': 'https://www.mail-learn.com/blog',
+    // Python Learning
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/blogPy.png': 'https://www.python-learning.com/blog',
+    // Design Ecourses
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/webdesigncase.png': 'https://www.design-ecourses.com/blog',
+    // Willcol AI
+    'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/wiloiams.png': 'https://willcol-ai.com/',
     // Password Generator
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img1p.png': 'https://password-generator-site-tau.vercel.app/',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/img2p.png': 'https://password-generator-site-tau.vercel.app/',
@@ -73,9 +94,7 @@ const OurStack: React.FC = () => {
     // Cointree
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/coimtree.png': 'https://www.cointree.com/',
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/cointre0.png': 'https://www.cointree.com/',
-    // // QuantaTech
-    // 'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/blog3.png': 'https://quantatech.net/',
-    // 'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/profile10.png': 'https://quantatech.net/',
+    
     // // MoneyCase
     'https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/moneycase9.png': 'https://moneycase.com.ua/',
     // Locksmith
@@ -134,13 +153,15 @@ const OurStack: React.FC = () => {
     { name: "MSSQL", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" },
     { name: "JSON", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg" },
    
-    { name: "Xml", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xml/xml-original.svg" },
+    // { name: "Xml", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xml/xml-original.svg" },
+    { name: "API", src: "https://img.icons8.com/ios-filled/50/000000/api-settings.png" },
+    
     { name: "Python", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     { name: "C++", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
     { name: "C#", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
-    
+    { name: "Others", src: "https://img.icons8.com/ios-filled/50/000000/dots-loading.png" }
 
-    { name: "API", src: "https://img.icons8.com/ios-filled/50/000000/api-settings.png" }
+    // { name: "API", src: "https://img.icons8.com/ios-filled/50/000000/api-settings.png" }
   ];
 
   // Получаем текущие 6 изображений для отображения

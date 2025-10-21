@@ -31,6 +31,38 @@ const ButtonContainer = styled.div`
       color: #23272f; /* Цвет иконки при наведении */
     }
   }
+
+  &::after {
+    content: '1';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff3333;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    opacity: 0;
+    transform: scale(0);
+    animation: showBadge 0.3s ease-out 3s forwards;
+  }
+
+  @keyframes showBadge {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 `;
 
 const TelegramButton: React.FC = () => {

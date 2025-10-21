@@ -66,6 +66,11 @@ export interface OurApproachLocaleContent {
     technicalSupport: FeatureContent;
     analyticsReporting: FeatureContent;
   };
+  presentation: {
+    title: string;
+    description: string;
+    buttonText: string;
+  };
 }
 
 export interface OurStackLocaleContent {

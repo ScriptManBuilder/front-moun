@@ -20,8 +20,6 @@ const CursorFollower = styled.div.attrs<CursorFollowerProps>(({ x, y, isVisible 
   },
 }))<CursorFollowerProps>`
   position: fixed;
-  top: 0;
-  left: 0;
   width: ${({ isHovering }) => isHovering ? '14px' : '12px'};
   height: ${({ isHovering }) => isHovering ? '14px' : '12px'};
   background: ${({ isHovering }) => 
@@ -32,10 +30,9 @@ const CursorFollower = styled.div.attrs<CursorFollowerProps>(({ x, y, isVisible 
   border: 2px solid rgba(255, 255, 255, 0.9);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 999999999; /* Увеличиваем z-index для гарантированного отображения поверх скролла */
+  z-index: 2147483647; /* Максимальный z-index для всегда видимого курсора */
   transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
   backdrop-filter: blur(5px);
-  mix-blend-mode: normal; /* Добавляем для корректного отображения */
   
   /* Градиентное свечение */
   box-shadow: 
@@ -84,14 +81,12 @@ const CursorTrail = styled.div.attrs<{ x: number; y: number; isVisible: boolean 
   },
 }))<{ x: number; y: number; isVisible: boolean }>`
   position: fixed;
-  top: 0;
-  left: 0;
   width: 8px;
   height: 8px;
   background: linear-gradient(135deg, #96e6a1 0%, #d4fc79 100%);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 999999998; /* Немного меньше основного курсора */
+  z-index: 2147483646; /* Немного меньше основного курсора */
   transition: all 0.3s ease-out;
   
   @media (max-width: 768px) {
@@ -110,7 +105,7 @@ const CursorTrail = styled.div.attrs<{ x: number; y: number; isVisible: boolean 
 const CustomCursor: React.FC = () => {
   const [cursorPosition, setCursorPosition] = useState<CursorPosition>({ x: 0, y: 0 });
   const [trailPosition, setTrailPosition] = useState<CursorPosition>({ x: 0, y: 0 });
-  const [isVisible, setIsVisible] = useState(true); // Делаем видимым по умолчанию
+  const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
@@ -158,23 +153,20 @@ const CustomCursor: React.FC = () => {
     `;
     document.head.appendChild(style);
 
-    // ИСПРАВЛЕНИЕ: Добавляем слушатели на window вместо document для полного покрытия
-    window.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseenter', handleMouseEnter);
     document.addEventListener('mouseleave', handleMouseLeave);
     document.addEventListener('mouseover', handleMouseOver);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseenter', handleMouseEnter);
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseover', handleMouseOver);
       
       // Восстанавливаем стандартный курсор
       document.body.style.cursor = 'auto';
-      if (document.head.contains(style)) {
-        document.head.removeChild(style);
-      }
+      document.head.removeChild(style);
     };
   }, []);
 

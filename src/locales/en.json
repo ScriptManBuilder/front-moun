@@ -121,6 +121,11 @@
         "title": "Analytics and reporting",
         "description": "We track key metrics and provide clear, actionable reports so you can see your progress and make informed business decisions."
       }
+    },
+    "presentation": {
+      "title": "Discover Our <span>Full Story</span>",
+      "description": "Want to learn more about MOUN Digital Agency? Download our complete presentation with detailed information about our services, portfolio, and success stories.",
+      "buttonText": "Download Presentation"
     }
   },
   "ourStack": {
