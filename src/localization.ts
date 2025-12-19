@@ -245,6 +245,12 @@ export interface AlertLocaleContent {
   };
 }
 
+export interface FooterLocaleContent {
+  copyright: string;
+  supportEmail: string;
+  supportText: string;
+}
+
 export interface LocaleContent {
   header: HeaderLocaleContent;
   hero: HeroLocaleContent;
@@ -259,6 +265,7 @@ export interface LocaleContent {
   calculator: CalculatorLocaleContent;
   faq: FAQLocaleContent;
   alert: AlertLocaleContent;
+  footer: FooterLocaleContent;
 }
 
 // Функция для получения локализации из локальных файлов

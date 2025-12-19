@@ -179,6 +179,71 @@ export const FooterIcons = styled.div`
   }
 `;
 
+export const SupportBlock = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  max-width: 100%;
+
+  @media (min-width: 426px) {
+    font-size: 0.85rem;
+  }
+
+  @media (min-width: 769px) {
+    font-size: 0.95rem;
+    flex-wrap: nowrap;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: 1rem;
+  }
+`;
+
+export const SupportText = styled.span`
+  color: #333;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.4;
+
+  @media (min-width: 426px) {
+    font-size: 0.85rem;
+  }
+
+  @media (min-width: 769px) {
+    font-size: 0.95rem;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: 1rem;
+  }
+`;
+
+export const SupportEmail = styled.span`
+  font-weight: 700;
+  color: #18181b;
+  text-decoration: none;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  word-break: break-all;
+
+  @media (min-width: 426px) {
+    font-size: 0.85rem;
+  }
+
+  @media (min-width: 769px) {
+    font-size: 0.95rem;
+    word-break: normal;
+  }
+
+  @media (min-width: 1025px) {
+    font-size: 1rem;
+  }
+`;
+
 export const FooterIconLink = styled.a`
   display: flex;
   align-items: center;

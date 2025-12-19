@@ -16,9 +16,9 @@ interface LocaleProviderProps {
 
 export const LocaleProvider: React.FC<LocaleProviderProps> = ({ children }) => {
   const [currentLocale, setCurrentLocale] = useState<LOCALES>(() => {
-    // Загружаем сохраненный язык из localStorage или используем украинский по умолчанию
+    // Загружаем сохраненный язык из localStorage или используем английский по умолчанию
     const savedLocale = localStorage.getItem('locale');
-    return (savedLocale as LOCALES) || LOCALES.UKRAINIAN;
+    return (savedLocale as LOCALES) || LOCALES.ENGLISH;
   });
   
   const [localeContent, setLocaleContent] = useState<LocaleContent | null>(null);
@@ -43,7 +43,7 @@ export const LocaleProvider: React.FC<LocaleProviderProps> = ({ children }) => {
     };
 
     loadInitialContent();
-  }, []);
+  }, [currentLocale]);
 
   return (
     <LocaleContext.Provider

@@ -1,3 +1,40 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /node_modules/
+Disallow: /.env
+Allow: /
+
+# Для Google
+User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+
+# Для Microsoft Edge / Bing
+User-agent: Bingbot
+Crawl-delay: 0
+Allow: /
+
+# Для Safari / Apple
+User-agent: Applebot
+Crawl-delay: 1
+Allow: /
+
+# Для DuckDuckGo
+User-agent: DuckDuckBot
+Crawl-delay: 0
+Allow: /
+
+# Для Yandex
+User-agent: Yandex
+Crawl-delay: 1
+Allow: /
+
+# Для остальных
+User-agent: *
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://mounweb.com/sitemap.xml

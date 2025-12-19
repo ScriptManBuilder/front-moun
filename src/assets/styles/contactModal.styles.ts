@@ -6,18 +6,14 @@ export const ModalOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
-    radial-gradient(circle at 30% 80%, rgba(0, 212, 170, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(150, 230, 161, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(212, 252, 121, 0.08) 0%, transparent 50%),
-    rgba(17, 24, 39, 0.85);
-  backdrop-filter: blur(16px) saturate(180%);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999999;
   padding: 20px;
-  animation: premiumFadeIn 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: fadeIn 0.2s ease;
   
   /* Улучшенная адаптивность для маленьких экранов */
   @media (max-width: 420px) {
@@ -40,65 +36,37 @@ export const ModalOverlay = styled.div`
     padding-top: 12px;
   }
   
-  @keyframes premiumFadeIn {
+  @keyframes fadeIn {
     from {
       opacity: 0;
-      backdrop-filter: blur(0px) saturate(100%);
     }
     to {
       opacity: 1;
-      backdrop-filter: blur(16px) saturate(180%);
     }
   }
 `;
 
 export const ModalContainer = styled.div`
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px) saturate(180%);
-  border-radius: 24px;
+  background: #ffffff;
+  border-radius: 20px;
   width: 100%;
   max-width: 480px;
   max-height: 85vh;
   overflow-y: auto;
-  box-shadow: 
-    0 32px 64px rgba(0, 0, 0, 0.12),
-    0 16px 32px rgba(0, 212, 170, 0.08),
-    0 0 0 1px rgba(255, 255, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  animation: premiumSlideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease;
   position: relative;
   z-index: 1000000;
-  border: 1px solid rgba(0, 212, 170, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   
-  /* Добавляем тонкий внутренний градиент */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(0, 212, 170, 0.02) 0%,
-      rgba(150, 230, 161, 0.01) 50%,
-      rgba(212, 252, 121, 0.02) 100%
-    );
-    border-radius: 24px;
-    pointer-events: none;
-    z-index: -1;
-  }
-  
-  @keyframes premiumSlideUp {
+  @keyframes slideUp {
     from {
-      transform: translateY(60px) scale(0.96);
+      transform: translateY(20px);
       opacity: 0;
-      filter: blur(8px);
     }
     to {
-      transform: translateY(0) scale(1);
+      transform: translateY(0);
       opacity: 1;
-      filter: blur(0);
     }
   }
   
@@ -146,34 +114,12 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalHeader = styled.div`
-  padding: 32px 32px 24px;
+  padding: 28px 28px 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border-bottom: 1px solid rgba(0, 212, 170, 0.08);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.8) 0%,
-    rgba(250, 250, 250, 0.4) 100%
-  );
-  backdrop-filter: blur(10px);
-  position: relative;
-  
-  /* Добавляем тонкое свечение сверху */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(0, 212, 170, 0.3),
-      transparent
-    );
-  }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff;
   
   @media (max-width: 480px) {
     padding: 24px 20px 18px;
@@ -182,18 +128,10 @@ export const ModalHeader = styled.div`
   @media (max-width: 420px) {
     padding: 20px 16px 16px;
   }
-  
-  @media (max-width: 360px) {
-    padding: 18px 14px 14px;
-  }
-  
-  @media (max-height: 568px) {
-    padding: 16px 20px 12px;
-  }
 `;
 
 export const ModalTitle = styled.h2`
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   color: #111827;
   margin: 0;
@@ -201,119 +139,86 @@ export const ModalTitle = styled.h2`
   text-align: center;
   flex: 1;
   padding-right: 20px;
-  font-family: 'Inter', 'Montserrat', 'Roboto', sans-serif;
-  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif;
   
-  /* Разделение текста на строки с разными стилями */
   span.main-text {
     display: block;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 800;
-    background: linear-gradient(135deg, #111827 0%, #00d4aa 50%, #96e6a1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 6px;
-    filter: drop-shadow(0 2px 4px rgba(0, 212, 170, 0.1));
+    color: #111827;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
   }
   
   span.sub-text {
     display: block;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     color: #6B7280;
-    opacity: 0.9;
-    background: rgba(107, 114, 128, 0.05);
-    padding: 4px 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 212, 170, 0.1);
-    backdrop-filter: blur(5px);
+    line-height: 1.5;
   }
   
   @media (max-width: 480px) {
     span.main-text {
-      font-size: 20px;
+      font-size: 22px;
     }
     
     span.sub-text {
-      font-size: 12px;
-      padding: 3px 10px;
+      font-size: 13px;
     }
-    
-    padding-right: 15px;
-  }
-  
-  @media (max-width: 420px) {
-    span.main-text {
-      font-size: 18px;
-    }
-    
-    span.sub-text {
-      font-size: 11px;
-      padding: 2px 8px;
-    }
-    
-    padding-right: 12px;
-  }
-  
-  @media (max-width: 360px) {
-    span.main-text {
-      font-size: 16px;
-    }
-    
-    span.sub-text {
-      font-size: 10px;
-      padding: 2px 6px;
-    }
-    
-    padding-right: 10px;
   }
 `;
 
 export const CloseButton = styled.button`
-  background: rgba(107, 114, 128, 0.1);
-  border: 1px solid rgba(107, 114, 128, 0.2);
-  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 212, 170, 0.08), rgba(150, 230, 161, 0.08));
+  border: 2px solid transparent;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
-  color: #6B7280;
+  color: #00d4aa;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
-  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #00d4aa 0%, #96e6a1 50%, #d4fc79 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+    z-index: -1;
+  }
   
   &:hover {
-    background: rgba(239, 68, 68, 0.1);
-    border-color: rgba(239, 68, 68, 0.3);
-    color: #EF4444;
-    transform: scale(1.05) rotate(90deg);
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+    background: transparent;
+    border-color: #00d4aa;
+    color: #ffffff;
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.35);
+    
+    &::before {
+      opacity: 1;
+    }
   }
   
   &:active {
-    transform: scale(0.95) rotate(90deg);
+    transform: rotate(90deg) scale(0.95);
   }
   
   @media (max-width: 480px) {
     width: 36px;
     height: 36px;
     font-size: 18px;
-  }
-  
-  @media (max-width: 420px) {
-    width: 34px;
-    height: 34px;
-    font-size: 16px;
-  }
-  
-  @media (max-width: 360px) {
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
   }
 `;
 
@@ -352,73 +257,48 @@ export const FormLabel = styled.label`
 
 export const FormInput = styled.input`
   width: 100%;
-  padding: 20px 24px;
-  border: 2px solid rgba(0, 212, 170, 0.12);
-  border-radius: 16px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #1F2937;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  padding: 14px 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #111827;
+  background: #ffffff;
   box-sizing: border-box;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  position: relative;
+  transition: all 0.2s ease;
   
   &:focus {
     outline: none;
-    border-color: rgba(0, 212, 170, 0.5);
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 
-      0 0 0 4px rgba(0, 212, 170, 0.1),
-      0 8px 24px rgba(0, 212, 170, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    transform: translateY(-2px);
+    border-color: #00d4aa;
+    box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
   }
   
   &:hover:not(:focus) {
-    border-color: rgba(0, 212, 170, 0.25);
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-1px);
+    border-color: #9ca3af;
   }
   
   &::placeholder {
     color: #9CA3AF;
-    font-weight: 400;
   }
   
   @media (max-width: 480px) {
-    padding: 18px 20px;
-    font-size: 16px;
-  }
-  
-  @media (max-width: 420px) {
-    padding: 16px 18px;
-    font-size: 16px;
-    border-radius: 14px;
-  }
-  
-  @media (max-width: 360px) {
-    padding: 14px 16px;
-    font-size: 16px;
-    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 15px;
   }
 `;
 
 export const FormTextarea = styled.textarea`
   width: 100%;
-  padding: 20px 24px;
-  border: 2px solid rgba(0, 212, 170, 0.12);
-  border-radius: 16px;
-  font-size: 16px;
-  font-weight: 500;
-  color: #1F2937;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
+  padding: 14px 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 15px;
+  color: #111827;
+  background: #ffffff;
   box-sizing: border-box;
   font-family: inherit;
   resize: vertical;
-  min-height: 120px;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  min-height: 100px;
+  transition: all 0.2s ease;
   
   &:focus {
     outline: none;
@@ -500,58 +380,48 @@ export const FormSelect = styled.select`
 export const PhoneInputWrapper = styled.div`
   display: flex;
   align-items: center;
-  border: 2px solid #e0e0e0;
-  border-radius: 16px;
-  background: #fafafa;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  background: #ffffff;
   transition: all 0.2s ease;
-  position: relative;
   
   &:focus-within {
-    border-color: #d4fc79;
-    background: white;
-    box-shadow: 0 0 0 3px rgba(212, 252, 121, 0.1);
+    border-color: #00d4aa;
+    box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
   }
   
   &:hover:not(:focus-within) {
-    border-color: #c8c8c8;
+    border-color: #9ca3af;
   }
   
-  /* Стили для input внутри PhoneInputWrapper */
   input {
     flex: 1;
     border: none;
     background: transparent;
-    padding: 18px 24px 18px 16px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #111827;
     outline: none;
     
     &::placeholder {
-      color: #999;
-      font-weight: 400;
+      color: #9CA3AF;
     }
   }
   
-  /* Стили для состояния ошибки */
   &.error {
-    border-color: #ff6b6b;
-    background: rgba(255, 107, 107, 0.05);
-    animation: shake 0.3s ease-in-out;
-    
-    input {
-      color: #d63031;
-    }
+    border-color: #EF4444;
+    background: rgba(239, 68, 68, 0.05);
     
     input::placeholder {
-      color: #ff6b6b;
+      color: #EF4444;
     }
   }
   
-  @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-2px); }
-    75% { transform: translateX(2px); }
+  @media (max-width: 480px) {
+    input {
+      padding: 12px 14px;
+      font-size: 15px;
+    }
   }
 `;
 
@@ -734,178 +604,101 @@ export const CountryItem = styled.li`
 
 export const SubmitButton = styled.button`
   width: 100%;
-  display: inline-block;
-  padding: 18px 32px;
-  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+  padding: 14px 24px;
+  background: #1F2937;
   color: #fff;
-  border: 2px solid transparent;
-  border-radius: 16px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s ease;
   cursor: pointer;
-  font-family: 'Inter', 'Montserrat', 'Roboto', sans-serif;
-  box-shadow: 
-    0 8px 32px rgba(31, 41, 55, 0.2),
-    0 4px 16px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-bottom: 8px; /* Еще более компактно */
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-  
-  /* Добавляем анимированный градиент на hover */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #00d4aa 0%, #96e6a1 50%, #d4fc79 100%);
-    transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    z-index: -1;
-  }
+  font-family: inherit;
+  margin-bottom: 12px;
 
   &:hover:not(:disabled) {
-    color: #1F2937;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 
-      0 16px 48px rgba(0, 212, 170, 0.25),
-      0 8px 32px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border-color: rgba(0, 212, 170, 0.3);
-    
-    &::before {
-      left: 0;
-    }
+    background: #111827;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
   
   &:active:not(:disabled) {
-    transform: translateY(-1px) scale(1.01);
+    transform: translateY(0);
   }
   
   &:disabled {
-    opacity: 0.6;
+    opacity: 0.5;
     cursor: not-allowed;
-    background: linear-gradient(135deg, #6B7280 0%, #9CA3AF 100%);
-    transform: none;
-    
-    &::before {
-      display: none;
-    }
+  }
+  
+  @media (max-width: 480px) {
+    padding: 12px 20px;
+    font-size: 15px;
   }
 `;
 
 export const OrText = styled.div`
   text-align: center;
-  color: #374151;
+  color: #6B7280;
   font-size: 13px;
-  font-weight: 700;
-  margin: 8px 0 6px;
+  font-weight: 500;
+  margin: 12px 0;
   position: relative;
-  background: rgba(0, 212, 170, 0.08);
-  padding: 6px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(0, 212, 170, 0.2);
-  backdrop-filter: blur(8px);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   
   &::before,
   &::after {
     content: '';
     position: absolute;
     top: 50%;
-    width: 30%;
+    width: 40%;
     height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(0, 212, 170, 0.3),
-      transparent
-    );
+    background: rgba(0, 0, 0, 0.1);
   }
   
   &::before {
-    left: 8%;
+    left: 0;
   }
   
   &::after {
-    right: 8%;
+    right: 0;
   }
   
   @media (max-width: 480px) {
     font-size: 12px;
-    margin: 6px 0 4px;
-    padding: 4px 10px;
-    
-    &::before,
-    &::after {
-      width: 25%;
-    }
+    margin: 10px 0;
   }
 `;
 
 export const TelegramButton = styled.button`
   width: 100%;
-  display: inline-block;
-  padding: 18px 40px;
-  background: linear-gradient(135deg, #0088cc 0%, #006fa8 100%);
+  padding: 14px 24px;
+  background: #0088cc;
   color: white;
-  border: 2px solid transparent;
-  border-radius: 16px;
-  font-size: 16px;
-  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  font-family: 'Inter', 'Montserrat', 'Roboto', sans-serif;
-  box-shadow: 
-    0 8px 32px rgba(0, 136, 204, 0.25),
-    0 4px 16px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  margin-bottom: 8px; /* Добавляем небольшой отступ снизу */
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-  
-  /* Добавляем shimmer эффект */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent
-    );
-    transition: left 0.6s ease;
-  }
+  gap: 8px;
+  font-family: inherit;
   
   &:hover {
-    background: linear-gradient(135deg, #229ED9 0%, #0088cc 100%);
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 
-      0 16px 48px rgba(0, 136, 204, 0.3),
-      0 8px 32px rgba(0, 0, 0, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border-color: rgba(34, 158, 217, 0.3);
-    
-    &::before {
-      left: 100%;
-    }
+    background: #006fa8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
   }
   
   &:active {
-    transform: translateY(-1px) scale(1.01);
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 480px) {
+    padding: 12px 20px;
+    font-size: 15px;
   }
 `;
 

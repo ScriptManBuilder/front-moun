@@ -5,6 +5,11 @@
     "language": "UA",
     "contactUs": "Зв'язатися з нами"
   },
+  "footer": {
+    "copyright": "© 2025 Moun Digital Agency",
+    "supportEmail": "support@mounweb.com",
+    "supportText": "Виникли питання? Напишіть нам на пошту!"
+  },
   "hero": {
     "title": "Перетворюємо ваші ідеї в унікальні веб-сайти",
     "subtitle": "Швидко, ефективно, надійно",
@@ -247,9 +252,6 @@
   },
   "orderButton": {
     "signUpConsultation": "Записатися на консультацію"
-  },
-  "footer": {
-    "copyright": "© 2025 Moun Digital Agency"
   },
   "contactModal": {
     "title": {

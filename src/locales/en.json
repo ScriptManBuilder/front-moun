@@ -5,6 +5,11 @@
     "language": "EN",
     "contactUs": "Contact Us"
   },
+  "footer": {
+    "copyright": "© 2025 Moun Digital Agency",
+    "supportEmail": "support@mounweb.com",
+    "supportText": "Have questions? Send us an email!"
+  },
   "hero": {
     "title": "We turn your ideas into unique websites",
     "subtitle": "Quickly, efficiently, reliably",
@@ -247,9 +252,6 @@
   },
   "orderButton": {
     "signUpConsultation": "Sign up for a consultation"
-  },
-  "footer": {
-    "copyright": "© 2025 Moun Digital Agency"
   },
   "contactModal": {
     "title": {
