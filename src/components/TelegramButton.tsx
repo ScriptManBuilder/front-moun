@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { FaTelegramPlane } from "react-icons/fa";
 
+interface ButtonContainerProps {
+  $showBadge: boolean;
+}
 
-
-
-
-const ButtonContainer = styled.div`
+const ButtonContainer = styled.div<ButtonContainerProps>`
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -48,30 +48,37 @@ const ButtonContainer = styled.div`
     font-size: 11px;
     font-weight: bold;
     font-family: Arial, sans-serif;
-    opacity: 0;
-    transform: scale(0);
-    animation: showBadge 0.3s ease-out 3s forwards;
-  }
-
-  @keyframes showBadge {
-    0% {
-      opacity: 0;
-      transform: scale(0);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
+    opacity: ${props => props.$showBadge ? 1 : 0};
+    transform: ${props => props.$showBadge ? 'scale(1)' : 'scale(0)'};
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   }
 `;
 
 const TelegramButton: React.FC = () => {
+  const [showBadge, setShowBadge] = useState(false);
+
+  useEffect(() => {
+    // Показываем бейдж через 3 секунды после загрузки
+    const showTimer = setTimeout(() => {
+      setShowBadge(true);
+    }, 3000);
+
+    // Скрываем бейдж через 13 секунд (3 + 10)
+    const hideTimer = setTimeout(() => {
+      setShowBadge(false);
+    }, 13000);
+
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+    };
+  }, []);
   const handleClick = () => {
     window.open('https://t.me/moun_digital', '_blank');
   };
 
   return (
-    <ButtonContainer>
+    <ButtonContainer $showBadge={showBadge}>
       {React.createElement(FaTelegramPlane as any, { 
         className: "icon", 
         onClick: handleClick 

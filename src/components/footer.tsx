@@ -40,11 +40,46 @@ const Footer: React.FC = () => {
   const [alertType, setAlertType] = useState<'success' | 'error'>('success');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    setAlertType('success');
-    setShowAlert(true);
-    setEmail("");
+    
+    try {
+      const botToken = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+      const chatId = process.env.REACT_APP_TELEGRAM_CHAT_ID;
+      
+      if (!botToken || !chatId) {
+        console.error('Telegram credentials not found in environment variables');
+        setAlertType('error');
+        setShowAlert(true);
+        return;
+      }
+
+      const message = `📧 New Newsletter Subscription\n\nEmail: ${email}`;
+      
+      const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'HTML'
+        })
+      });
+
+      if (response.ok) {
+        setAlertType('success');
+        setShowAlert(true);
+        setEmail("");
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending to Telegram:', error);
+      setAlertType('error');
+      setShowAlert(true);
+    }
   };
 
   return (
