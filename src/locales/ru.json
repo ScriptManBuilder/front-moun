@@ -6,9 +6,11 @@
     "contactUs": "Связаться с нами"
   },
   "footer": {
-    "copyright": "© 2025 Moun Digital Agency",
+    "copyright": "© 2025 Moun Digital Agency. Все права защищены.",
     "supportEmail": "support@mounweb.com",
-    "supportText": "Возникли вопросы? Отпишите нам на почту!"
+    "serviceArea": "Качественная веб-разработка для клиентов в Украине, США и Европе",
+    "contactTitle": "Есть идея или нужен надежный digital-партнер?",
+    "trustBadges": "Создаем цифровые решения для клиентов по всему миру • Долгосрочное сотрудничество"
   },
   "hero": {
     "title": "Превращаем ваши идеи в уникальные веб-сайты",

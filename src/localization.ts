@@ -248,7 +248,9 @@ export interface AlertLocaleContent {
 export interface FooterLocaleContent {
   copyright: string;
   supportEmail: string;
-  supportText: string;
+  serviceArea: string;
+  contactTitle: string;
+  trustBadges: string;
 }
 
 export interface LocaleContent {

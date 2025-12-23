@@ -45,38 +45,46 @@ export const ApproachSubtitle = styled.p`
 // ===== Grid Layout =====
 export const ApproachSteps = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Ensure six cards fit in one row */
-  gap: 2.5px; /* Reduced spacing between cards */
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2.5px;
   padding: 10px;
   justify-content: center;
   margin: 0 auto;
   width: 100%;
-  max-width: 1200px; /* Restrict container width */
+  max-width: 1200px;
   box-sizing: border-box;
 
   @media (max-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr); /* Adjusted for smaller screens */
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 600px;
+    justify-items: center;
   }
 
   @media (max-width: 767px) {
-    grid-template-columns: repeat(2, 1fr); /* Adjusted for mobile */
-    gap: 15px;
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 15px;
+    max-width: 550px;
+    justify-items: center;
   }
 
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr; /* Single column for very small screens */
-    gap: 15px;
-    padding: 20px;
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0 15px;
   }
 `;
 
 // ===== Individual Step Cards =====
 export const ApproachStep = styled.div<{ $active?: boolean }>`
   position: relative;
-  width: ${({ $active }) => ($active ? "210px" : "190px")}; /* Slightly reduced width */
-  height: 240px; /* Slightly reduced height */
+  width: ${({ $active }) => ($active ? "210px" : "190px")};
+  height: 240px;
   padding: 20px 15px;
   background: ${({ $active }) =>
     $active
@@ -87,7 +95,7 @@ export const ApproachStep = styled.div<{ $active?: boolean }>`
     $active
       ? "0 8px 30px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(76, 175, 80, 0.2)"
       : "0 4px 20px rgba(0, 0, 0, 0.08)"};
-  transition: width 0.4s ease; /* Анимация изменения ширины */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -95,16 +103,35 @@ export const ApproachStep = styled.div<{ $active?: boolean }>`
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.06);
 
-  @media (max-width: 767px) {
-    width: ${({ $active }) => ($active ? "210px" : "190px")};
-    max-width: calc(100vw - 40px); /* Равные отступы слева и справа */
-    margin-left: auto;
-    margin-right: auto;
+  @media (max-width: 1024px) {
+    width: 260px;
+    height: auto;
+    min-height: 240px;
   }
 
-  @media (max-width: 480px) {
-    width: ${({ $active }) => ($active ? "210px" : "190px")};
+  @media (max-width: 767px) {
+    width: 260px;
     max-width: calc(100vw - 40px);
+    height: auto;
+    min-height: 240px;
+  }
+
+  @media (max-width: 425px) {
+    width: 240px;
+    max-width: calc(100vw - 30px);
+    padding: 18px 15px;
+  }
+
+  @media (max-width: 375px) {
+    width: 220px;
+    max-width: calc(100vw - 30px);
+    padding: 16px 12px;
+  }
+
+  @media (max-width: 320px) {
+    width: 200px;
+    max-width: calc(100vw - 30px);
+    padding: 15px 10px;
   }
 `;
 
