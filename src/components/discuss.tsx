@@ -285,7 +285,7 @@ const Discuss: React.FC = () => {
   };
 
   return (
-    <DiscussContainer>
+    <DiscussContainer id="discuss">
       <DiscussContent>        <DiscussTextContainer>
           <RobotImage src={`${process.env.PUBLIC_URL}/images/28logo.jpg`} alt="AI Assistant" />
           <TextWrapper>

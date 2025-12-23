@@ -60,7 +60,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <FAQSection>
+    <FAQSection id="faq">
       <FAQContainer>
         <FAQTitle>
           {localeContent?.faq?.title || 'FAQ'}

@@ -99,7 +99,7 @@ const Roadmap: React.FC = () => {
 
 
   return (
-    <RoadmapContainer>
+    <RoadmapContainer id="roadmap">
       {/* Анимированные частицы на фоне */}
       <AnimatedParticles>
         <div className="particle"></div>

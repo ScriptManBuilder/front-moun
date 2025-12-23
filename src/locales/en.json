@@ -8,9 +8,83 @@
   "footer": {
     "copyright": "© 2025 Moun Digital Agency. All rights reserved.",
     "supportEmail": "support@mounweb.com",
+    "contactEmail": "contact@mounweb.com",
+    "contactDescription": "New projects & collaborations",
+    "supportDescription": "Ongoing projects & client support",
     "serviceArea": "High-quality web development for clients in Ukraine, USA & Europe",
     "contactTitle": "Have an idea or need a reliable digital partner?",
-    "trustBadges": "Building digital solutions for clients worldwide • Long-term partnerships"
+    "contactSubtitle": "We help businesses design, build, and launch modern websites that are fast, scalable, and tailored to real business goals.",
+    "newsletterTitle": "Stay Updated",
+    "newsletterDescription": "Get practical insights on web development, digital strategy, and online growth.",
+    "newsletterPlaceholder": "Enter your email address",
+    "subscribeButton": "Subscribe",
+    "newsletterSuccess": "Thank you for subscribing! You'll receive our latest updates.",
+    "connectWithUs": "Connect with us",
+    "trustBadges": "Building digital solutions for clients worldwide • Long-term partnerships",
+    "privacyPolicy": "Privacy Policy",
+    "links": "Links",
+    "mainPage": "Main Page",
+    "faq": "FAQ",
+    "calculatePrice": "Calculate Price",
+    "order": "Order",
+    "consultation": "Consultation"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: December 23, 2025",
+    "backToHome": "Back to Home",
+    "introduction": {
+      "title": "Introduction",
+      "text": "At Moun Digital Agency, we take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or use our services."
+    },
+    "dataCollection": {
+      "title": "Information We Collect",
+      "text": "We collect the following types of information:",
+      "items": {
+        "email": "Email addresses",
+        "emailDesc": " when you subscribe to our newsletter or submit a contact form",
+        "contact": "Contact information",
+        "contactDesc": " including name, phone number, and company details when you fill out our contact forms",
+        "usage": "Usage data",
+        "usageDesc": " such as IP address, browser type, and pages visited"
+      }
+    },
+    "dataUse": {
+      "title": "How We Use Your Information",
+      "text": "We use the collected information for:",
+      "items": {
+        "respond": "Responding to your inquiries and providing customer support",
+        "newsletter": "Sending newsletters and marketing communications (only if you've subscribed)",
+        "improve": "Improving our website and services",
+        "legal": "Complying with legal obligations"
+      }
+    },
+    "dataProtection": {
+      "title": "Data Protection",
+      "text": "We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, or misuse. Your data is stored securely and is only accessible to authorized personnel."
+    },
+    "sharing": {
+      "title": "Data Sharing",
+      "text": "We do not sell, rent, or share your personal information with third parties for marketing purposes. We may share your data with trusted service providers who assist us in operating our website and conducting our business, provided they agree to keep this information confidential."
+    },
+    "rights": {
+      "title": "Your Rights",
+      "text": "You have the right to:",
+      "items": {
+        "access": "Access the personal data we hold about you",
+        "correct": "Request correction of inaccurate data",
+        "delete": "Request deletion of your personal data",
+        "unsubscribe": "Unsubscribe from our newsletter at any time"
+      }
+    },
+    "cookies": {
+      "title": "Cookies",
+      "text": "Our website may use cookies to enhance your browsing experience. You can choose to disable cookies through your browser settings, but this may affect the functionality of certain features."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "text": "If you have any questions about this Privacy Policy or wish to exercise your rights, please contact us at:"
+    }
   },
   "hero": {
     "title": "We turn your ideas into unique websites",

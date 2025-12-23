@@ -248,9 +248,84 @@ export interface AlertLocaleContent {
 export interface FooterLocaleContent {
   copyright: string;
   supportEmail: string;
+  contactEmail: string;
+  contactDescription: string;
+  supportDescription: string;
   serviceArea: string;
   contactTitle: string;
+  contactSubtitle: string;
+  newsletterTitle: string;
+  newsletterDescription: string;
+  newsletterPlaceholder: string;
+  subscribeButton: string;
+  newsletterSuccess: string;
+  connectWithUs: string;
   trustBadges: string;
+  privacyPolicy: string;
+  links: string;
+  mainPage: string;
+  faq: string;
+  calculatePrice: string;
+  order: string;
+  consultation: string;
+}
+
+export interface PrivacyPolicyLocaleContent {
+  title: string;
+  lastUpdated: string;
+  backToHome: string;
+  introduction: {
+    title: string;
+    text: string;
+  };
+  dataCollection: {
+    title: string;
+    text: string;
+    items: {
+      email: string;
+      emailDesc: string;
+      contact: string;
+      contactDesc: string;
+      usage: string;
+      usageDesc: string;
+    };
+  };
+  dataUse: {
+    title: string;
+    text: string;
+    items: {
+      respond: string;
+      newsletter: string;
+      improve: string;
+      legal: string;
+    };
+  };
+  dataProtection: {
+    title: string;
+    text: string;
+  };
+  sharing: {
+    title: string;
+    text: string;
+  };
+  rights: {
+    title: string;
+    text: string;
+    items: {
+      access: string;
+      correct: string;
+      delete: string;
+      unsubscribe: string;
+    };
+  };
+  cookies: {
+    title: string;
+    text: string;
+  };
+  contact: {
+    title: string;
+    text: string;
+  };
 }
 
 export interface LocaleContent {
@@ -268,6 +343,7 @@ export interface LocaleContent {
   faq: FAQLocaleContent;
   alert: AlertLocaleContent;
   footer: FooterLocaleContent;
+  privacyPolicy: PrivacyPolicyLocaleContent;
 }
 
 // Функция для получения локализации из локальных файлов

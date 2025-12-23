@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/header";
 import Footer from "./components/footer";
 import MainSection from "./components/mainSection";
@@ -17,6 +18,7 @@ import FAQ from './components/faq';
 import CustomCursor from './components/customCursor';
 import { AlertProvider } from './contexts/AlertContext';
 import AlertManager from './components/AlertManager';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 
 
@@ -24,29 +26,32 @@ function App() {
   return (
     <LocaleProvider>
       <AlertProvider>
-        <div className="App">
-          <GlobalStyles />
-          <CustomCursor />
-          <AlertManager />
-          <Header />
-          <main>
-            <MainSection />
-           <CalculatorPrice />
-            <ServiceCards />
-            <WhyChoseUs />
-            <OurApproach />
-            <OurStack />
-            
-            <Discuss />
-            <Roadmap />
-            <FAQ />
-        
-            <TelegramButton />  
-          
-            
-          </main>
-          <Footer />
-        </div>
+        <Router>
+          <div className="App">
+            <GlobalStyles />
+            <CustomCursor />
+            <AlertManager />
+            <Header />
+            <Routes>
+              <Route path="/" element={
+                <main>
+                  <MainSection />
+                  <CalculatorPrice />
+                  <ServiceCards />
+                  <WhyChoseUs />
+                  <OurApproach />
+                  <OurStack />
+                  <Discuss />
+                  <Roadmap />
+                  <FAQ />
+                  <TelegramButton />  
+                </main>
+              } />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            </Routes>
+            <Footer />
+          </div>
+        </Router>
       </AlertProvider>
     </LocaleProvider>
   );

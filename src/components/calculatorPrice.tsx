@@ -117,7 +117,7 @@ const CalculatorPrice: React.FC = () => {
   };
 
   return (
-    <CalculatorSection>
+    <CalculatorSection id="calculator">
       <CalculatorTitle>{localeContent?.calculator.title || 'Calculate Website Cost'}</CalculatorTitle>
       <CalculatorSubtitle>
         {localeContent?.calculator.subtitle || 'Specify the parameters of your future website and get an estimated cost'}
