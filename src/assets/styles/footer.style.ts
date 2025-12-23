@@ -59,15 +59,23 @@ export const FooterTop = styled.div`
   @media (max-width: 992px) {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
   }
 
   @media (max-width: 768px) {
-    gap: 16px;
+    gap: 20px;
   }
 
   @media (max-width: 425px) {
+    gap: 16px;
+  }
+
+  @media (max-width: 375px) {
     gap: 14px;
+  }
+
+  @media (max-width: 320px) {
+    gap: 12px;
   }
 `;
 
@@ -83,13 +91,22 @@ export const FooterLeft = styled.div`
     align-items: center;
     text-align: center;
     width: 100%;
+    order: 1;
   }
 
   @media (max-width: 768px) {
-    gap: 10px;
+    gap: 12px;
   }
 
   @media (max-width: 425px) {
+    gap: 10px;
+  }
+
+  @media (max-width: 375px) {
+    gap: 9px;
+  }
+
+  @media (max-width: 320px) {
     gap: 8px;
   }
 `;
@@ -104,14 +121,27 @@ export const FooterCenter = styled.div`
 
   @media (max-width: 992px) {
     width: 100%;
+    order: 3;
   }
 
   @media (max-width: 768px) {
-    gap: 10px;
+    gap: 8px;
+  }
+
+  @media (max-width: 576px) {
+    gap: 6px;
   }
 
   @media (max-width: 425px) {
-    gap: 8px;
+    gap: 5px;
+  }
+
+  @media (max-width: 375px) {
+    gap: 4px;
+  }
+
+  @media (max-width: 320px) {
+    gap: 3px;
   }
 `;
 
@@ -128,14 +158,27 @@ export const FooterRight = styled.div`
     max-width: 100%;
     width: 100%;
     gap: 16px;
+    order: 2;
   }
   
   @media (max-width: 768px) {
     gap: 14px;
   }
 
+  @media (max-width: 576px) {
+    max-width: 450px;
+  }
+
   @media (max-width: 425px) {
     gap: 12px;
+  }
+
+  @media (max-width: 375px) {
+    gap: 11px;
+  }
+
+  @media (max-width: 320px) {
+    gap: 10px;
   }
 `;
 
@@ -330,24 +373,30 @@ export const ServiceArea = styled.div`
   margin-bottom: 0;
   
   @media (max-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.88rem;
+    padding: 0 8px;
   }
 
   @media (max-width: 425px) {
-    font-size: 0.82rem;
-    padding: 0 5px;
-    line-height: 1.2;
+    font-size: 0.84rem;
+    padding: 0 6px;
+    line-height: 1.25;
     margin-bottom: 0;
   }
 
   @media (max-width: 375px) {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
+    padding: 0 5px;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.72rem;
-    padding: 0 3px;
-    line-height: 1.15;
+    font-size: 0.76rem;
+    padding: 0 4px;
+    line-height: 1.2;
   }
 `;
 
@@ -362,11 +411,23 @@ export const ContactSection = styled.div`
   }
 
   @media (max-width: 768px) {
-    gap: 7px;
+    gap: 8px;
+  }
+
+  @media (max-width: 576px) {
+    gap: 6px;
   }
 
   @media (max-width: 425px) {
     gap: 5px;
+  }
+
+  @media (max-width: 375px) {
+    gap: 4px;
+  }
+
+  @media (max-width: 320px) {
+    gap: 3px;
   }
 `;
 
@@ -380,21 +441,26 @@ export const ContactTitle = styled.div`
     font-size: 1.05rem;
   }
 
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    padding: 0 12px;
+  }
+
   @media (max-width: 425px) {
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     padding: 0 10px;
-    line-height: 1.25;
+    line-height: 1.28;
   }
 
   @media (max-width: 375px) {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     padding: 0 8px;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.82rem;
-    padding: 0 5px;
-    line-height: 1.2;
+    font-size: 0.85rem;
+    padding: 0 6px;
+    line-height: 1.25;
   }
 `;
 
@@ -456,11 +522,23 @@ export const EmailDescription = styled.div`
   font-weight: 400;
 
   @media (max-width: 768px) {
-    font-size: 0.85rem;
+    font-size: 0.87rem;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 0.84rem;
   }
 
   @media (max-width: 425px) {
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 375px) {
     font-size: 0.8rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 0.78rem;
   }
 `;
 
