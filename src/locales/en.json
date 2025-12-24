@@ -240,7 +240,8 @@
     },
     "alerts": {
       "success": "Your message has been sent successfully!",
-      "error": "An error occurred while sending your message. Please try again."
+      "error": "An error occurred while sending your message. Please try again.",
+      "rateLimitError": "You have sent too many messages. Please try again in an hour."
     }
   },
   "workStages": {
@@ -446,7 +447,8 @@
     },
     "error": {
       "title": "Error",
-      "messageNotSubmitted": "Failed to send message. Please try again later."
+      "messageNotSubmitted": "Failed to send message. Please try again later.",
+      "rateLimitError": "You have sent too many messages. Please try again in an hour."
     },
     "warning": {
       "title": "Warning"

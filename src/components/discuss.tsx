@@ -153,6 +153,15 @@ const Discuss: React.FC = () => {
         body: JSON.stringify(submitData)
       });
 
+      // Проверка на превышение лимита запросов
+      if (response.status === 429) {
+        showCustomAlert(
+          localeContent?.discuss?.alerts?.rateLimitError || 'You have sent too many messages. Please try again in an hour.',
+          false
+        );
+        return;
+      }
+
       const result = await response.json();
 
       if (response.ok && result.success) {

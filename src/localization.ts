@@ -106,6 +106,7 @@ export interface DiscussLocaleContent {
   alerts: {
     success: string;
     error: string;
+    rateLimitError: string;
   };
 }
 
@@ -236,6 +237,7 @@ export interface AlertLocaleContent {
   error: {
     title: string;
     messageNotSubmitted: string;
+    rateLimitError: string;
   };
   warning: {
     title: string;

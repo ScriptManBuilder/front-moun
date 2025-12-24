@@ -197,15 +197,17 @@ export const NewsletterSection = styled.div`
   @media (max-width: 425px) {
     padding: 14px;
     border-radius: 10px;
+    border: none;
   }
 
   @media (max-width: 375px) {
     padding: 12px;
+    border: none;
   }
 
   @media (max-width: 320px) {
     padding: 10px;
-    border-width: 1.5px;
+    border: none;
   }
 `;
 
