@@ -194,20 +194,21 @@ export const NewsletterSection = styled.div`
     max-width: 500px;
   }
 
+  @media (max-width: 527px) {
+    border: none;
+  }
+
   @media (max-width: 425px) {
     padding: 14px;
     border-radius: 10px;
-    border: none;
   }
 
   @media (max-width: 375px) {
     padding: 12px;
-    border: none;
   }
 
   @media (max-width: 320px) {
     padding: 10px;
-    border: none;
   }
 `;
 
@@ -302,18 +303,18 @@ export const NewsletterInput = styled.input`
   }
 
   @media (max-width: 425px) {
-    font-size: 0.82rem;
+    font-size: 16px;
     padding: 9px 12px;
     border-radius: 6px;
   }
 
   @media (max-width: 375px) {
-    font-size: 0.8rem;
+    font-size: 16px;
     padding: 8px 10px;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.78rem;
+    font-size: 16px;
     padding: 8px 10px;
   }
 `;
@@ -350,18 +351,18 @@ export const SubscribeButton = styled.button`
   }
 
   @media (max-width: 425px) {
-    font-size: 0.82rem;
+    font-size: 16px;
     padding: 9px 16px;
     border-radius: 6px;
   }
 
   @media (max-width: 375px) {
-    font-size: 0.8rem;
+    font-size: 16px;
     padding: 8px 14px;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.78rem;
+    font-size: 16px;
     padding: 8px 12px;
   }
 `;
