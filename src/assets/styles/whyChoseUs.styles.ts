@@ -209,41 +209,57 @@ export const FeatureItem = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px 20px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 16px;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(0, 212, 170, 0.08);
-  box-shadow: 
-    0 6px 24px rgba(0, 0, 0, 0.06),
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(145deg, #ffffff, #fafafa);
+  border-radius: 20px;
+  border: 2px solid rgba(0, 212, 170, 0.15);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   
-  /* Добавляем внутреннее свечение */
+  /* Градиентная подсветка по периметру */
   &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, 
+      rgba(0, 212, 170, 0.3), 
+      rgba(150, 230, 161, 0.25), 
+      rgba(212, 252, 121, 0.2),
+      rgba(0, 212, 170, 0.15)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+  }
+  
+  /* Внутреннее свечение сверху */
+  &::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 212, 170, 0.3), transparent);
+    height: 100px;
+    background: radial-gradient(ellipse at top, rgba(0, 212, 170, 0.08) 0%, transparent 70%);
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.5s ease;
   }
   
   &:hover {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: rgba(0, 212, 170, 0.25);
-    box-shadow: 
-      0 16px 48px rgba(0, 212, 170, 0.12),
-      0 6px 24px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    transform: translateY(-6px) scale(1.02);
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-color: rgba(0, 212, 170, 0.4);
+    transform: translateY(-8px) scale(1.03);
     
     &::before {
+      opacity: 1;
+    }
+    
+    &::after {
       opacity: 1;
     }
   }
@@ -266,6 +282,9 @@ export const FeatureItem = styled.div`
   &:nth-child(1) { animation-delay: 0.1s; }
   &:nth-child(2) { animation-delay: 0.2s; }
   &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.4s; }
+  &:nth-child(5) { animation-delay: 0.5s; }
+  &:nth-child(6) { animation-delay: 0.6s; }
   
   /* All mobile sizes */
   @media (max-width: 767px) {
