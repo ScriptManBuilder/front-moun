@@ -38,23 +38,28 @@ const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [alertType, setAlertType] = useState<'success' | 'error'>('success');
+  const [alertMessage, setAlertMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Проверка на пустое поле
+    // Проверка на пустое поле - просто выходим без алерта
     if (!email || email.trim() === '') {
-      setAlertType('error');
-      setShowAlert(true);
       return;
     }
+    
+    // Сбросить предыдущий алерт
+    setShowAlert(false);
     
     // Проверка валидности email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setAlertType('error');
-      setShowAlert(true);
+      setTimeout(() => {
+        setAlertMessage(localeContent?.footer?.newsletterError || 'Please enter a valid email address.');
+        setAlertType('error');
+        setShowAlert(true);
+      }, 100);
       return;
     }
     
@@ -64,6 +69,7 @@ const Footer: React.FC = () => {
       
       if (!botToken || !chatId) {
         console.error('Telegram credentials not found in environment variables');
+        setAlertMessage(localeContent?.footer?.newsletterError || 'An error occurred. Please try again later.');
         setAlertType('error');
         setShowAlert(true);
         return;
@@ -84,6 +90,7 @@ const Footer: React.FC = () => {
       });
 
       if (response.ok) {
+        setAlertMessage(localeContent?.footer?.newsletterSuccess || 'Thank you for subscribing! You\'ll receive our latest updates.');
         setAlertType('success');
         setShowAlert(true);
         setEmail("");
@@ -92,6 +99,7 @@ const Footer: React.FC = () => {
       }
     } catch (error) {
       console.error('Error sending to Telegram:', error);
+      setAlertMessage(localeContent?.footer?.newsletterError || 'An error occurred. Please try again later.');
       setAlertType('error');
       setShowAlert(true);
     }
@@ -240,7 +248,7 @@ const Footer: React.FC = () => {
       <CustomAlert
         isVisible={showAlert}
         type={alertType}
-        message={localeContent?.footer?.newsletterSuccess || "Thank you for subscribing! You'll receive our latest updates."}
+        message={alertMessage}
         duration={5000}
         onClose={() => setShowAlert(false)}
       />

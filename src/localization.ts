@@ -261,6 +261,7 @@ export interface FooterLocaleContent {
   newsletterPlaceholder: string;
   subscribeButton: string;
   newsletterSuccess: string;
+  newsletterError: string;
   connectWithUs: string;
   trustBadges: string;
   privacyPolicy: string;

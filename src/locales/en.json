@@ -19,6 +19,7 @@
     "newsletterPlaceholder": "Enter your email address",
     "subscribeButton": "Subscribe",
     "newsletterSuccess": "Thank you for subscribing! You'll receive our latest updates.",
+    "newsletterError": "Please enter a valid email address.",
     "connectWithUs": "Follow us",
     "trustBadges": "Building digital solutions for clients worldwide • Long-term partnerships",
     "privacyPolicy": "Privacy Policy",
