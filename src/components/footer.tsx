@@ -43,6 +43,21 @@ const Footer: React.FC = () => {
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Проверка на пустое поле
+    if (!email || email.trim() === '') {
+      setAlertType('error');
+      setShowAlert(true);
+      return;
+    }
+    
+    // Проверка валидности email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setAlertType('error');
+      setShowAlert(true);
+      return;
+    }
+    
     try {
       const botToken = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
       const chatId = process.env.REACT_APP_TELEGRAM_CHAT_ID;
@@ -178,13 +193,12 @@ const Footer: React.FC = () => {
               <NewsletterDescription>
                 {localeContent?.footer.newsletterDescription || "Join our newsletter to get the latest marketing tips and industry insights delivered straight to your inbox."}
               </NewsletterDescription>
-              <NewsletterForm onSubmit={handleSubscribe}>
+              <NewsletterForm onSubmit={handleSubscribe} noValidate>
                 <NewsletterInput
                   type="email"
                   placeholder={localeContent?.footer.newsletterPlaceholder || "Enter your email address"}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
                 />
                 <SubscribeButton type="submit">
                   {localeContent?.footer.subscribeButton || "Subscribe"}

@@ -287,6 +287,7 @@ export const NewsletterInput = styled.input`
   font-size: 0.95rem;
   outline: none;
   transition: all 0.3s ease;
+  touch-action: manipulation;
 
   &:focus {
     border-color: #18181b;
@@ -330,6 +331,8 @@ export const SubscribeButton = styled.button`
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     background: #d4fc79;
