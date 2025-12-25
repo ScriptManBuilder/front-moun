@@ -601,16 +601,17 @@ export const SubmitButton = styled.button`
   font-size: 1.15rem;
   font-weight: 700;
   color: #18181b;
-  background: #d4fc79;
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+  background-size: 200% 200%;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   margin-top: 15px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   font-size: 0.95rem;
-  box-shadow: 0 4px 12px rgba(212, 252, 121, 0.3);
+  box-shadow: 0 4px 15px rgba(150, 230, 161, 0.4), 0 2px 8px rgba(212, 252, 121, 0.3);
   position: relative;
   overflow: hidden;
   font-family: 'Inter', 'Montserrat', 'Roboto', sans-serif;
@@ -618,20 +619,37 @@ export const SubmitButton = styled.button`
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+  }
+
   &:hover:not(:disabled) {
-    background: #d4fc79;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(230, 255, 0, 0.3);
+    background-position: 100% 50%;
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(150, 230, 161, 0.5), 0 4px 12px rgba(212, 252, 121, 0.4);
+    
+    &::before {
+      left: 100%;
+    }
   }
 
   &:active:not(:disabled) {
-    transform: translateY(0);
+    transform: translateY(0) scale(0.99);
+    box-shadow: 0 2px 10px rgba(150, 230, 161, 0.3);
   }
 
   &:disabled {
     opacity: 0.65;
     cursor: not-allowed;
     transform: none;
+    background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
   }
 
   @media (max-width: 768px) {
