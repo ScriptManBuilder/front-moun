@@ -247,6 +247,41 @@ export interface AlertLocaleContent {
   };
 }
 
+export interface CareerFormLocaleContent {
+  title: string;
+  subtitle: string;
+  name: string;
+  namePlaceholder: string;
+  email: string;
+  emailPlaceholder: string;
+  phone: string;
+  phonePlaceholder: string;
+  specialization: string;
+  selectSpecialization: string;
+  frontend: string;
+  backend: string;
+  fullstack: string;
+  design: string;
+  mobile: string;
+  devops: string;
+  other: string;
+  experience: string;
+  selectExperience: string;
+  junior: string;
+  middle: string;
+  senior: string;
+  lead: string;
+  experienceOther: string;
+  message: string;
+  messagePlaceholder: string;
+  submit: string;
+  sending: string;
+  successMessage: string;
+  errorMessage: string;
+  errorRequired: string;
+  privacyNote: string;
+}
+
 export interface FooterLocaleContent {
   copyright: string;
   supportEmail: string;
@@ -271,6 +306,7 @@ export interface FooterLocaleContent {
   calculatePrice: string;
   order: string;
   consultation: string;
+  career: string;
 }
 
 export interface PrivacyPolicyLocaleContent {
@@ -345,6 +381,7 @@ export interface LocaleContent {
   calculator: CalculatorLocaleContent;
   faq: FAQLocaleContent;
   alert: AlertLocaleContent;
+  careerForm: CareerFormLocaleContent;
   footer: FooterLocaleContent;
   privacyPolicy: PrivacyPolicyLocaleContent;
 }

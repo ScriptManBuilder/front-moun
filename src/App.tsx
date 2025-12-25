@@ -19,6 +19,7 @@ import CustomCursor from './components/customCursor';
 import { AlertProvider } from './contexts/AlertContext';
 import AlertManager from './components/AlertManager';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import CareerForm from './components/CareerForm';
 
 
 
@@ -48,6 +49,7 @@ function App() {
                 </main>
               } />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/career" element={<CareerForm />} />
             </Routes>
             <Footer />
           </div>

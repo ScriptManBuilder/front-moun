@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   FooterWrapper,
   FooterContent,
@@ -35,11 +36,47 @@ import { SiTiktok, SiThreads } from "react-icons/si";
 
 const Footer: React.FC = () => {
   const { localeContent } = useLocale();
+  const navigate = useNavigate();
+  const location = useLocation();
   const [email, setEmail] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [alertType, setAlertType] = useState<'success' | 'error'>('success');
   const [alertMessage, setAlertMessage] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    
+    // Если это Main Page - скроллим в самый верх
+    if (targetId === '#top') {
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 100);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      return;
+    }
+    
+    // Если мы на другой странице (например privacy-policy), сначала переходим на главную
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.querySelector(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // Если мы уже на главной странице, просто скроллим
+      const element = document.querySelector(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -148,21 +185,36 @@ const Footer: React.FC = () => {
                 {localeContent?.footer.links || "Links"}
               </ContactTitle>
               <div>
-                <EmailDescription as="a" href="#top" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+                <EmailDescription 
+                  as="a" 
+                  href="#top" 
+                  onClick={(e) => handleSmoothScroll(e, '#top')}
+                  style={{ textDecoration: 'none', cursor: 'pointer' }}
+                >
                   {localeContent?.footer.mainPage || "Main Page"}
                 </EmailDescription>
               </div>
-                   <div>
-                <EmailDescription as="a" href="#calculator" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              <div>
+                <EmailDescription 
+                  as="a" 
+                  href="#calculator" 
+                  onClick={(e) => handleSmoothScroll(e, '#calculator')}
+                  style={{ textDecoration: 'none', cursor: 'pointer' }}
+                >
                   {localeContent?.footer.calculatePrice || "Calculate Price"}
                 </EmailDescription>
               </div>
-                <div>
-                <EmailDescription as="a" href="#roadmap" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+              <div>
+                <EmailDescription 
+                  as="a" 
+                  href="#roadmap" 
+                  onClick={(e) => handleSmoothScroll(e, '#roadmap')}
+                  style={{ textDecoration: 'none', cursor: 'pointer' }}
+                >
                   {localeContent?.footer.consultation || "Consultation"}
                 </EmailDescription>
               </div>
-                   <div>
+              <div>
                 <EmailDescription 
                   as="button" 
                   onClick={() => setIsModalOpen(true)}
@@ -177,16 +229,41 @@ const Footer: React.FC = () => {
                   {localeContent?.footer.order || "Order"}
                 </EmailDescription>
               </div>
-            
               <div>
-                <EmailDescription as="a" href="#faq" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+                <EmailDescription 
+                  as="a" 
+                  href="#faq" 
+                  onClick={(e) => handleSmoothScroll(e, '#faq')}
+                  style={{ textDecoration: 'none', cursor: 'pointer' }}
+                >
                   {localeContent?.footer.faq || "FAQ"}
                 </EmailDescription>
               </div>
-         
-         
               <div>
-                <EmailDescription as="a" href="/privacy-policy" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+                <EmailDescription 
+                  as="a" 
+                  href="/career" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/career');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  style={{ textDecoration: 'none', cursor: 'pointer' }}
+                >
+                  {localeContent?.footer.career || "Career"}
+                </EmailDescription>
+              </div>
+              <div>
+                <EmailDescription 
+                  as="a" 
+                  href="/privacy-policy" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    navigate('/privacy-policy');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  style={{ textDecoration: 'none', cursor: 'pointer' }}
+                >
                   {localeContent?.footer.privacyPolicy || "Privacy Policy"}
                 </EmailDescription>
               </div>
