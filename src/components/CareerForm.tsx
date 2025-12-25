@@ -7,6 +7,7 @@ import {
   CareerFormWrapper,
   FormTitle,
   FormSubtitle,
+  Divider,
   FormGroup,
   ShortFormGroup,
   FormLabel,
@@ -159,7 +160,8 @@ ${data.message || 'No message provided'}
           ← {localeContent?.careerForm?.backToHome || 'Back to Home'}
         </BackButton>
         <FormTitle>{localeContent?.careerForm?.title || 'Join Our Team'}</FormTitle>
-        <FormSubtitle>{localeContent?.careerForm?.subtitle || 'Fill out the form and let\'s work together!'}</FormSubtitle>
+        <Divider />
+        <FormSubtitle>{localeContent?.careerForm?.subtitle || 'Looking for collaboration projects? Fill out the form and let\'s work together!'}</FormSubtitle>
 
         <form onSubmit={handleSubmit}>
           <FormSection>
@@ -289,7 +291,7 @@ ${data.message || 'No message provided'}
               <span style={{ 
                 float: 'right', 
                 fontSize: '0.75rem', 
-                color: 'rgba(168, 133, 247, 0.7)',
+                color: 'rgba(51, 65, 85, 0.6)',
                 fontWeight: 'normal',
                 marginLeft: '10px'
               }}>

@@ -7,7 +7,7 @@ export const CareerFormContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 120px 20px 80px;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0f0f1e 100%);
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8f5e9 25%, #f1f8e9 50%, #e0f2f1 75%, #f3f4f6 100%);
   position: relative;
   overflow: hidden;
 
@@ -18,9 +18,10 @@ export const CareerFormContainer = styled.div`
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 40%, rgba(138, 43, 226, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 70% 60%, rgba(218, 112, 214, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 50% 80%, rgba(138, 43, 226, 0.12) 0%, transparent 35%);
+    background: radial-gradient(circle at 30% 40%, rgba(212, 252, 121, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(212, 252, 121, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 80%, rgba(150, 230, 161, 0.1) 0%, transparent 35%),
+                radial-gradient(circle at 20% 70%, rgba(35, 39, 47, 0.05) 0%, transparent 30%);
     animation: gradientShift 20s ease infinite;
     pointer-events: none;
   }
@@ -50,81 +51,47 @@ export const CareerFormContainer = styled.div`
 export const CareerFormWrapper = styled.div`
   max-width: 750px;
   width: 100%;
-  background: rgba(26, 26, 46, 0.85);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 252, 248, 0.96) 50%, rgba(250, 254, 250, 0.98) 100%);
   backdrop-filter: blur(20px);
   border-radius: 24px;
   padding: 25px 40px 40px;
-  box-shadow: 0 20px 60px rgba(138, 43, 226, 0.25),
-              0 0 0 1px rgba(138, 43, 226, 0.15);
-  border: 1px solid rgba(138, 43, 226, 0.2);
+  box-shadow: 0 20px 60px rgba(35, 39, 47, 0.15),
+              0 8px 16px rgba(35, 39, 47, 0.1),
+              0 0 0 1px rgba(35, 39, 47, 0.08);
+  border: 1px solid rgba(35, 39, 47, 0.12);
   position: relative;
   z-index: 1;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #8a2be2, #da70d6, #8a2be2);
-    border-radius: 24px 24px 0 0;
-  }
 
   @media (max-width: 768px) {
     padding: 35px 22px;
     border-radius: 18px;
     max-width: 95%;
-    
-    &::before {
-      height: 3px;
-      border-radius: 18px 18px 0 0;
-    }
   }
 
   @media (max-width: 425px) {
     padding: 28px 16px;
     border-radius: 16px;
-    
-    &::before {
-      height: 2.5px;
-      border-radius: 16px 16px 0 0;
-    }
   }
 
   @media (max-width: 375px) {
     padding: 24px 14px;
     border-radius: 14px;
-    
-    &::before {
-      height: 2px;
-      border-radius: 14px 14px 0 0;
-    }
   }
 
   @media (max-width: 320px) {
     padding: 18px 10px;
     border-radius: 12px;
-    
-    &::before {
-      height: 2px;
-      border-radius: 12px 12px 0 0;
-    }
   }
 `;
 
 export const FormTitle = styled.h1`
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1e293b;
   text-align: center;
-  margin-bottom: 8px;
-  margin-top: 0;
-  background: linear-gradient(135deg, #8a2be2, #da70d6, #b57aed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin-bottom: 16px;
+  margin-top: 20px;
   letter-spacing: -0.5px;
   line-height: 1.2;
 
@@ -153,14 +120,16 @@ export const FormTitle = styled.h1`
 `;
 
 export const FormSubtitle = styled.p`
-  font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.2rem;
+  color: rgba(51, 65, 85, 0.8);
   text-align: center;
-  margin-bottom: 45px;
-  line-height: 1.7;
-  max-width: 600px;
+  margin-bottom: 50px;
+  line-height: 1.8;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 400;
+  padding: 0 20px;
 
   @media (max-width: 768px) {
     font-size: 0.95rem;
@@ -184,6 +153,26 @@ export const FormSubtitle = styled.p`
     font-size: 0.78rem;
     margin-bottom: 12px;
     line-height: 1.35;
+  }
+`;
+
+export const Divider = styled.div`
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #96e6a1, #d4fc79);
+  margin: 20px auto;
+  border-radius: 2px;
+
+  @media (max-width: 768px) {
+    width: 60px;
+    height: 2.5px;
+    margin: 16px auto;
+  }
+
+  @media (max-width: 425px) {
+    width: 50px;
+    height: 2px;
+    margin: 12px auto;
   }
 `;
 
@@ -386,12 +375,16 @@ export const FormSection = styled.div`
 export const SectionTitle = styled.h3`
   font-size: 0.95rem;
   font-weight: 600;
-  color: rgba(168, 85, 247, 0.9);
+  color: #23272f;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   margin: 0 0 14px 0;
   padding-bottom: 8px;
-  border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+  border-bottom: 2px solid rgba(35, 39, 47, 0.2);
+  background: linear-gradient(90deg, rgba(212, 252, 121, 0.15) 0%, transparent 100%);
+  padding-left: 8px;
+  margin-left: -8px;
+  border-radius: 4px;
 
   @media (max-width: 768px) {
     font-size: 0.88rem;
@@ -421,8 +414,8 @@ export const FormLabel = styled.label<{ $hasValue?: boolean; $isFocused?: boolea
   top: ${props => (props.$hasValue || props.$isFocused) ? '-10px' : '14px'};
   font-size: ${props => (props.$hasValue || props.$isFocused) ? '0.68rem' : '0.9rem'};
   font-weight: 600;
-  color: ${props => props.$isFocused ? '#a855f7' : 'rgba(255, 255, 255, 0.7)'};
-  background: ${props => (props.$hasValue || props.$isFocused) ? 'linear-gradient(to bottom, transparent 50%, rgba(26, 26, 46, 0.95) 50%)' : 'transparent'};
+  color: ${props => props.$isFocused ? '#23272f' : 'rgba(51, 65, 85, 0.65)'};
+  background: ${props => (props.$hasValue || props.$isFocused) ? 'linear-gradient(to bottom, transparent 50%, rgba(255, 255, 255, 0.95) 50%)' : 'transparent'};
   padding: 0 5px;
   letter-spacing: 0.1px;
   text-transform: uppercase;
@@ -473,31 +466,35 @@ const inputStyles = `
   box-sizing: border-box;
   padding: 16px 18px 12px 18px;
   font-size: 0.98rem;
-  color: #ffffff;
-  background: rgba(20, 20, 35, 0.7);
-  border: 2px solid rgba(138, 43, 226, 0.25);
+  color: #1e293b;
+  background: linear-gradient(135deg, rgba(248, 252, 248, 0.6) 0%, rgba(245, 250, 245, 0.7) 100%);
+  border: 2px solid rgba(35, 39, 47, 0.2);
   border-radius: 11px;
   outline: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(35, 39, 47, 0.05),
+              0 2px 4px rgba(35, 39, 47, 0.03);
 
   &::placeholder {
-    color: rgba(255, 255, 255, 0.35);
+    color: rgba(35, 39, 47, 0.4);
     font-size: 0.9rem;
   }
 
   &:focus {
-    border-color: #a855f7;
-    background: rgba(20, 20, 35, 0.9);
-    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25),
-                inset 0 2px 4px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
+    border-color: #23272f;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 254, 250, 0.95) 100%);
+    box-shadow: 0 0 0 3px rgba(212, 252, 121, 0.2),
+                0 4px 12px rgba(35, 39, 47, 0.15),
+                inset 0 1px 3px rgba(35, 39, 47, 0.05);
+    transform: translateY(-2px);
   }
 
   &:hover:not(:focus) {
-    border-color: rgba(168, 85, 247, 0.4);
-    background: rgba(20, 20, 35, 0.8);
+    border-color: rgba(35, 39, 47, 0.3);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 254, 250, 0.85) 100%);
+    box-shadow: 0 2px 8px rgba(35, 39, 47, 0.1),
+                inset 0 1px 3px rgba(35, 39, 47, 0.05);
   }
 
   @media (max-width: 768px) {
@@ -536,15 +533,15 @@ export const FormSelect = styled.select`
   ${inputStyles}
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%238a2be2' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2323272f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 18px center;
   background-size: 16px;
   padding-right: 50px;
 
   option {
-    background: #1a1a2e;
-    color: #ffffff;
+    background: #f8fafc;
+    color: #1e293b;
     padding: 12px;
     font-size: 1rem;
   }
@@ -603,45 +600,32 @@ export const SubmitButton = styled.button`
   padding: 18px 36px;
   font-size: 1.15rem;
   font-weight: 700;
-  color: #ffffff;
-  background: linear-gradient(135deg, #8a2be2 0%, #b57aed 50%, #da70d6 100%);
-  background-size: 200% 100%;
+  color: #18181b;
+  background: #d4fc79;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   margin-top: 15px;
   letter-spacing: 0.8px;
   text-transform: uppercase;
   font-size: 0.95rem;
-  box-shadow: 0 8px 24px rgba(138, 43, 226, 0.3);
+  box-shadow: 0 4px 12px rgba(212, 252, 121, 0.3);
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s;
-  }
+  font-family: 'Inter', 'Montserrat', 'Roboto', sans-serif;
+  white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover:not(:disabled) {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(138, 43, 226, 0.45);
-    background-position: 100% 0;
-    
-    &::before {
-      left: 100%;
-    }
+    background: #d4fc79;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(230, 255, 0, 0.3);
   }
 
   &:active:not(:disabled) {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.35);
+    transform: translateY(0);
   }
 
   &:disabled {
@@ -684,7 +668,7 @@ export const SubmitButton = styled.button`
 export const PrivacyNote = styled.p`
   text-align: center;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(71, 85, 105, 0.7);
   margin-top: 20px;
   line-height: 1.6;
   display: flex;
@@ -729,12 +713,12 @@ export const BackButton = styled.button`
   margin-bottom: 12px;
   align-self: flex-start;
   font-family: 'Inter', 'Montserrat', 'Roboto', sans-serif;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
   &:hover {
-    background: #d4a5f7;
+    background: #d4fc79;
     color: #23272f;
-    box-shadow: 0 3px 12px rgba(168, 85, 247, 0.35);
+    box-shadow: 0 4px 16px rgba(224, 252, 55, 0.3);
     border-color: #23272f;
     transform: translateX(-2px);
   }
