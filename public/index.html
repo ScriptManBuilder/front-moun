@@ -2,54 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="%PUBLIC_URL%/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#ffffff" />
 
-    <!-- Primary SEO Meta Tags (Ukrainian focus) -->
-    <meta name="description" content="Moun Digital Agency ⭐ Професійна розробка сайтів в Україні ✅ Створення веб-сайтів та інтернет-магазинів ✅ SEO оптимізація ✅ Підтримка 24/7" />
-    <meta name="keywords" content="розробка сайтів Україна, створення сайтів, веб-дизайн, інтернет-магазин, SEO оптимізація, Digital Agency Ukraine, замовити сайт, веб-студія" />
+    <!-- Primary SEO Meta Tags (EN main) -->
+    <title>Moun Digital Agency — Web Development & Digital Agency for Ukraine, Europe & USA</title>
+    <meta
+      name="description"
+      content="Moun Digital Agency builds modern websites and eCommerce solutions for businesses in Ukraine, Europe, and the US. Design, development, SEO, and reliable support."
+    />
+    <meta
+      name="keywords"
+      content="Moun Digital Agency, web development agency, website development, ecommerce development, digital agency, web design, SEO services, Ukraine web agency, Europe web development, USA web development"
+    />
     <meta name="author" content="Moun Digital Agency" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="language" content="uk-UA" />
-    <meta name="geo.region" content="UA" />
-    <meta name="geo.country" content="Ukraine" />
-    
-    <!-- Hreflang for multilingual versions -->
-    <link rel="alternate" hreflang="uk" href="https://mounweb.com/" />
-    <link rel="alternate" hreflang="en" href="https://mounweb.com/en/" />
-    <link rel="alternate" hreflang="ru" href="https://mounweb.com/ru/" />
+    <link rel="canonical" href="https://mounweb.com/" />
+
+    <!-- Hreflang -->
     <link rel="alternate" hreflang="x-default" href="https://mounweb.com/" />
 
     <!-- Open Graph / Facebook / Telegram -->
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="uk_UA" />
-    <meta property="og:locale:alternate" content="en_US" />
-    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:url" content="https://mounweb.com/" />
-    <meta property="og:title" content="Moun Digital Agency — Website Development" />
     <meta property="og:site_name" content="Moun Digital Agency" />
-    <meta property="og:description" content="Professional website and web app development for business. Creativity, quality, support." />
+    <meta property="og:title" content="Moun Digital Agency — Web Development for Ukraine, Europe & USA" />
+    <meta
+      property="og:description"
+      content="Modern websites and eCommerce solutions for businesses in Ukraine, Europe and the US. Design, development and SEO — full-cycle delivery by Moun Digital Agency."
+    />
     <meta property="og:image" content="https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/metaMoun.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="Moun Digital Agency — Website Development" />
+    <meta property="og:image:alt" content="Moun Digital Agency — Web Development for Ukraine, Europe & USA" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://mounweb.com/" />
-    <meta name="twitter:title" content="Moun Digital Agency — Website Development" />
-    <meta name="twitter:description" content="Professional website and web app development for business. Creativity, quality, support." />
+    <meta name="twitter:title" content="Moun Digital Agency — Web Development for Ukraine, Europe & USA" />
+    <meta
+      name="twitter:description"
+      content="Modern websites and eCommerce solutions for businesses in Ukraine, Europe and the US. Design, development and SEO — full-cycle delivery by Moun Digital Agency."
+    />
     <meta name="twitter:image" content="https://raw.githubusercontent.com/ScriptManBuilder/images4DigitalAgencyMOUN/main/metaMoun.jpg" />
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://mounweb.com/" />
-    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T6RE9G91ZT"></script>
     <script>
@@ -58,36 +66,61 @@
       gtag('js', new Date());
       gtag('config', 'G-T6RE9G91ZT');
     </script>
-    
-    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Righteous&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Moun Digital Agency",
+      "url": "https://mounweb.com/",
+      "logo": "https://mounweb.com/favicon-96x96.png",
+      "description": "Moun Digital Agency is a web development and digital agency delivering modern websites and eCommerce solutions for businesses in Ukraine, Europe and the USA.",
+      "foundingLocation": {
+        "@type": "Country",
+        "name": "Ukraine"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Ukraine"
+        },
+        {
+          "@type": "Continent",
+          "name": "Europe"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+  "https://www.instagram.com/moun_digital_agency",
+  "https://www.threads.com/@moun_digital_agency",
+  "https://www.linkedin.com/company/moun-digital-agency"
+  ]
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Moun </title>
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Moun Digital Agency",
+      "url": "https://mounweb.com/"
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Righteous&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>
