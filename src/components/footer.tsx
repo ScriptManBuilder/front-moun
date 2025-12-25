@@ -214,6 +214,7 @@ const Footer: React.FC = () => {
                   {localeContent?.footer.consultation || "Consultation"}
                 </EmailDescription>
               </div>
+             
               <div>
                 <EmailDescription 
                   as="button" 
@@ -239,7 +240,7 @@ const Footer: React.FC = () => {
                   {localeContent?.footer.faq || "FAQ"}
                 </EmailDescription>
               </div>
-              <div>
+               <div>
                 <EmailDescription 
                   as="a" 
                   href="/career" 

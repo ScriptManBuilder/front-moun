@@ -462,12 +462,17 @@
   "careerForm": {
     "title": "Join Our Team",
     "subtitle": "Looking for collaboration projects? Fill out the form and let's work together!",
+    "contactInformation": "Contact Information",
+    "professionalDetails": "Professional Details",
+    "additionalInformation": "Additional Information",
     "name": "Name",
     "namePlaceholder": "Your name",
     "email": "Email",
     "emailPlaceholder": "your@email.com",
     "phone": "Phone",
     "phonePlaceholder": "+1 XXX XXX XXXX",
+    "telegram": "Telegram",
+    "telegramPlaceholder": "@username",
     "specialization": "Specialization",
     "selectSpecialization": "Select specialization",
     "frontend": "Frontend Developer",
@@ -491,6 +496,7 @@
     "successMessage": "Thank you! Your application has been sent. We will contact you soon.",
     "errorMessage": "An error occurred while sending. Please try again later or contact us directly.",
     "errorRequired": "Please fill in all required fields",
-    "privacyNote": "We respect your privacy. No spam. Only relevant collaboration offers."
+    "privacyNote": "We respect your privacy. No spam. Only relevant collaboration offers.",
+    "backToHome": "Back to Home"
   }
 }

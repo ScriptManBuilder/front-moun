@@ -250,12 +250,17 @@ export interface AlertLocaleContent {
 export interface CareerFormLocaleContent {
   title: string;
   subtitle: string;
+  contactInformation: string;
+  professionalDetails: string;
+  additionalInformation: string;
   name: string;
   namePlaceholder: string;
   email: string;
   emailPlaceholder: string;
   phone: string;
   phonePlaceholder: string;
+  telegram: string;
+  telegramPlaceholder: string;
   specialization: string;
   selectSpecialization: string;
   frontend: string;
@@ -280,6 +285,7 @@ export interface CareerFormLocaleContent {
   errorMessage: string;
   errorRequired: string;
   privacyNote: string;
+  backToHome: string;
 }
 
 export interface FooterLocaleContent {

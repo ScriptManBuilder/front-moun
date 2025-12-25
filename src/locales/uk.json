@@ -460,12 +460,17 @@
   "careerForm": {
     "title": "Приєднуйтесь до нашої команди",
     "subtitle": "Шукаєте проєкти для співпраці? Заповніть форму і давайте працювати разом!",
+    "contactInformation": "Контактна інформація",
+    "professionalDetails": "Професійні деталі",
+    "additionalInformation": "Додаткова інформація",
     "name": "Ім'я",
     "namePlaceholder": "Ваше ім'я",
     "email": "Email",
     "emailPlaceholder": "your@email.com",
     "phone": "Телефон",
     "phonePlaceholder": "+380 XX XXX XX XX",
+    "telegram": "Telegram",
+    "telegramPlaceholder": "@username",
     "specialization": "Спеціалізація",
     "selectSpecialization": "Оберіть спеціалізацію",
     "frontend": "Frontend розробник",
@@ -489,6 +494,7 @@
     "successMessage": "Дякуємо! Вашу заявку відправлено. Ми зв'яжемося з вами найближчим часом.",
     "errorMessage": "Сталася помилка під час відправки. Спробуйте пізніше або зв'яжіться з нами напряму.",
     "errorRequired": "Будь ласка, заповніть всі обов'язкові поля",
-    "privacyNote": "Ми поважаємо вашу конфіденційність. Ніякого спаму. Тільки релевантні пропозиції про співпрацю."
+    "privacyNote": "Ми поважаємо вашу конфіденційність. Ніякого спаму. Тільки релевантні пропозиції про співпрацю.",
+    "backToHome": "Назад на головну"
   }
 }

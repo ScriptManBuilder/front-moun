@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const CareerFormContainer = styled.div`
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 120px 20px 80px;
@@ -52,7 +53,7 @@ export const CareerFormWrapper = styled.div`
   background: rgba(26, 26, 46, 0.85);
   backdrop-filter: blur(20px);
   border-radius: 24px;
-  padding: 60px 50px;
+  padding: 25px 40px 40px;
   box-shadow: 0 20px 60px rgba(138, 43, 226, 0.25),
               0 0 0 1px rgba(138, 43, 226, 0.15);
   border: 1px solid rgba(138, 43, 226, 0.2);
@@ -118,7 +119,8 @@ export const FormTitle = styled.h1`
   font-weight: 700;
   color: #ffffff;
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  margin-top: 0;
   background: linear-gradient(135deg, #8a2be2, #da70d6, #b57aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -249,8 +251,96 @@ export const SecondFormRow = styled.div`
 `;
 
 export const FormGroup = styled.div`
+  margin-bottom: 20px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 425px) {
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 375px) {
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 320px) {
+    margin-bottom: 10px;
+  }
+`;
+
+export const ShortFormGroup = styled.div`
+  margin-bottom: 20px;
+  position: relative;
+  max-width: 50%;
+
+  @media (max-width: 768px) {
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 425px) {
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 375px) {
+    margin-bottom: 14px;
+    max-width: 100%;
+  }
+
+  @media (max-width: 320px) {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+`;
+
+export const CompactFormRow = styled.div`
+  display: flex;
+  gap: 18px;
+  width: 100%;
+
+  ${ShortFormGroup} {
+    max-width: 44%;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+
+    ${ShortFormGroup} {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 425px) {
+    ${ShortFormGroup} {
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    ${ShortFormGroup} {
+      margin-bottom: 14px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    ${ShortFormGroup} {
+      margin-bottom: 10px;
+    }
+  }
+`;
+
+export const FullWidthGroup = styled.div`
   margin-bottom: 28px;
   position: relative;
+  width: 100%;
+  max-width: 100%;
 
   @media (max-width: 768px) {
     margin-bottom: 20px;
@@ -269,29 +359,59 @@ export const FormGroup = styled.div`
   }
 `;
 
-export const ShortFormGroup = styled.div`
-  margin-bottom: 28px;
-  position: relative;
-  max-width: 50%;
+export const FormSection = styled.div`
+  margin-bottom: 24px;
+
+  &:last-of-type {
+    margin-bottom: 16px;
+  }
 
   @media (max-width: 768px) {
     margin-bottom: 20px;
-    max-width: 100%;
+
+    &:last-of-type {
+      margin-bottom: 14px;
+    }
   }
 
   @media (max-width: 425px) {
-    margin-bottom: 16px;
-    max-width: 100%;
+    margin-bottom: 22px;
+
+    &:last-of-type {
+      margin-bottom: 14px;
+    }
+  }
+`;
+
+export const SectionTitle = styled.h3`
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(168, 85, 247, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin: 0 0 14px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+
+  @media (max-width: 768px) {
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    letter-spacing: 1px;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 425px) {
+    font-size: 0.82rem;
     margin-bottom: 14px;
-    max-width: 100%;
+    padding-bottom: 7px;
+    letter-spacing: 0.8px;
   }
 
   @media (max-width: 320px) {
-    margin-bottom: 10px;
-    max-width: 100%;
+    font-size: 0.78rem;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    letter-spacing: 0.6px;
   }
 `;
 
@@ -590,5 +710,58 @@ export const PrivacyNote = styled.p`
     margin-top: 6px;
     gap: 3px;
     line-height: 1.35;
+  }
+`;
+
+export const BackButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #23272f;
+  border: 1.5px solid #23272f;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 18px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.8s ease, color 2s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  margin-bottom: 12px;
+  align-self: flex-start;
+  font-family: 'Inter', 'Montserrat', 'Roboto', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    background: #d4a5f7;
+    color: #23272f;
+    box-shadow: 0 3px 12px rgba(168, 85, 247, 0.35);
+    border-color: #23272f;
+    transform: translateX(-2px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    border-radius: 16px;
+    gap: 3px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 0.7rem;
+    padding: 4px 9px;
+    border-radius: 14px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+    border-width: 1px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 0.65rem;
+    padding: 3px 7px;
+    border-radius: 12px;
+    border-width: 1px;
   }
 `;
