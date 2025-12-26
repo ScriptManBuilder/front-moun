@@ -505,21 +505,21 @@ const inputStyles = `
 
   @media (max-width: 425px) {
     padding: 10px 10px 7px 10px;
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 7px;
     border-width: 1.5px;
   }
 
   @media (max-width: 375px) {
     padding: 9px 9px 7px 9px;
-    font-size: 13px;
+    font-size: 16px;
     border-radius: 7px;
     border-width: 1.5px;
   }
 
   @media (max-width: 320px) {
     padding: 8px 8px 6px 8px;
-    font-size: 12.5px;
+    font-size: 16px;
     border-radius: 6px;
     border-width: 1.5px;
   }
