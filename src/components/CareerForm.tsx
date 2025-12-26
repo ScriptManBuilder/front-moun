@@ -155,7 +155,7 @@ ${data.message || 'No message provided'}
 
   return (
     <CareerFormContainer>
-      <CareerFormWrapper>
+      <CareerFormWrapper id="career-form">
         <BackButton onClick={() => navigate('/')}>
           ← {localeContent?.careerForm?.backToHome || 'Back to Home'}
         </BackButton>

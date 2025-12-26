@@ -60,6 +60,15 @@ const Footer: React.FC = () => {
       return;
     }
     
+    // Если это Career форма - переходим на страницу /career и скроллим в самый верх
+    if (targetId === '#career-form') {
+      navigate('/career');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+      return;
+    }
+    
     // Если мы на другой странице (например privacy-policy), сначала переходим на главную
     if (location.pathname !== '/') {
       navigate('/');
@@ -243,12 +252,8 @@ const Footer: React.FC = () => {
                <div>
                 <EmailDescription 
                   as="a" 
-                  href="/career" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    navigate('/career');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
+                  href="/career#career-form" 
+                  onClick={(e) => handleSmoothScroll(e, '#career-form')}
                   style={{ textDecoration: 'none', cursor: 'pointer' }}
                 >
                   {localeContent?.footer.career || "Career"}
