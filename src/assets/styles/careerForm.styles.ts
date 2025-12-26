@@ -70,18 +70,18 @@ export const CareerFormWrapper = styled.div`
   }
 
   @media (max-width: 425px) {
-    padding: 28px 16px;
-    border-radius: 16px;
-  }
-
-  @media (max-width: 375px) {
-    padding: 24px 14px;
+    padding: 20px 12px;
     border-radius: 14px;
   }
 
-  @media (max-width: 320px) {
-    padding: 18px 10px;
+  @media (max-width: 375px) {
+    padding: 16px 10px;
     border-radius: 12px;
+  }
+
+  @media (max-width: 320px) {
+    padding: 14px 8px;
+    border-radius: 10px;
   }
 `;
 
@@ -101,20 +101,23 @@ export const FormTitle = styled.h1`
   }
 
   @media (max-width: 425px) {
-    font-size: 1.6rem;
-    margin-bottom: 6px;
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+    margin-top: 8px;
     letter-spacing: -0.2px;
   }
 
   @media (max-width: 375px) {
-    font-size: 1.45rem;
-    margin-bottom: 5px;
+    font-size: 1.3rem;
+    margin-bottom: 4px;
+    margin-top: 6px;
     letter-spacing: -0.2px;
   }
 
   @media (max-width: 320px) {
-    font-size: 1.25rem;
-    margin-bottom: 4px;
+    font-size: 1.15rem;
+    margin-bottom: 3px;
+    margin-top: 4px;
     letter-spacing: 0;
   }
 `;
@@ -138,21 +141,24 @@ export const FormSubtitle = styled.p`
   }
 
   @media (max-width: 425px) {
-    font-size: 0.88rem;
-    margin-bottom: 20px;
-    line-height: 1.45;
+    font-size: 0.8rem;
+    margin-bottom: 14px;
+    line-height: 1.4;
+    padding: 0 8px;
   }
 
   @media (max-width: 375px) {
-    font-size: 0.84rem;
-    margin-bottom: 18px;
-    line-height: 1.4;
+    font-size: 0.76rem;
+    margin-bottom: 12px;
+    line-height: 1.35;
+    padding: 0 6px;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.78rem;
-    margin-bottom: 12px;
-    line-height: 1.35;
+    font-size: 0.72rem;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    padding: 0 4px;
   }
 `;
 
@@ -248,15 +254,15 @@ export const FormGroup = styled.div`
   }
 
   @media (max-width: 425px) {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   @media (max-width: 375px) {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   @media (max-width: 320px) {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 `;
 
@@ -394,17 +400,17 @@ export const SectionTitle = styled.h3`
   }
 
   @media (max-width: 425px) {
-    font-size: 0.82rem;
-    margin-bottom: 14px;
-    padding-bottom: 7px;
-    letter-spacing: 0.8px;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    letter-spacing: 0.6px;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.78rem;
-    margin-bottom: 12px;
-    padding-bottom: 6px;
-    letter-spacing: 0.6px;
+    font-size: 0.72rem;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    letter-spacing: 0.4px;
   }
 `;
 
@@ -504,23 +510,23 @@ const inputStyles = `
   }
 
   @media (max-width: 425px) {
-    padding: 10px 10px 7px 10px;
+    padding: 9px 8px 6px 8px;
     font-size: 16px;
-    border-radius: 7px;
+    border-radius: 6px;
     border-width: 1.5px;
   }
 
   @media (max-width: 375px) {
-    padding: 9px 9px 7px 9px;
+    padding: 8px 7px 6px 7px;
     font-size: 16px;
-    border-radius: 7px;
+    border-radius: 6px;
     border-width: 1.5px;
   }
 
   @media (max-width: 320px) {
-    padding: 8px 8px 6px 8px;
+    padding: 7px 6px 5px 6px;
     font-size: 16px;
-    border-radius: 6px;
+    border-radius: 5px;
     border-width: 1.5px;
   }
 `;
@@ -574,24 +580,24 @@ export const FormTextarea = styled.textarea`
   }
 
   @media (max-width: 425px) {
-    min-height: 95px;
-    max-height: 150px;
-    line-height: 1.45;
-    padding-top: 11px;
-  }
-
-  @media (max-width: 375px) {
-    min-height: 90px;
-    max-height: 140px;
-    line-height: 1.45;
+    min-height: 80px;
+    max-height: 130px;
+    line-height: 1.4;
     padding-top: 10px;
   }
 
-  @media (max-width: 320px) {
-    min-height: 85px;
-    max-height: 130px;
+  @media (max-width: 375px) {
+    min-height: 75px;
+    max-height: 120px;
     line-height: 1.4;
     padding-top: 9px;
+  }
+
+  @media (max-width: 320px) {
+    min-height: 70px;
+    max-height: 110px;
+    line-height: 1.35;
+    padding-top: 8px;
   }
 `;
 
@@ -659,27 +665,27 @@ export const SubmitButton = styled.button`
   }
 
   @media (max-width: 425px) {
-    padding: 12px 20px;
-    font-size: 0.8rem;
-    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.75rem;
+    border-radius: 7px;
     letter-spacing: 0.3px;
-    margin-top: 6px;
+    margin-top: 8px;
   }
 
   @media (max-width: 375px) {
-    padding: 11px 18px;
-    font-size: 0.78rem;
-    border-radius: 7px;
+    padding: 9px 14px;
+    font-size: 0.72rem;
+    border-radius: 6px;
     letter-spacing: 0.2px;
-    margin-top: 5px;
+    margin-top: 6px;
   }
 
   @media (max-width: 320px) {
-    padding: 10px 16px;
-    font-size: 0.76rem;
-    border-radius: 7px;
-    letter-spacing: 0.2px;
-    margin-top: 4px;
+    padding: 8px 12px;
+    font-size: 0.7rem;
+    border-radius: 6px;
+    letter-spacing: 0.1px;
+    margin-top: 5px;
   }
 `;
 

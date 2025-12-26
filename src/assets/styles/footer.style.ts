@@ -395,21 +395,22 @@ export const ServiceArea = styled.div`
   }
 
   @media (max-width: 425px) {
-    font-size: 0.84rem;
-    padding: 0 6px;
-    line-height: 1.25;
+    font-size: 0.7rem;
+    padding: 0 3px;
+    line-height: 1.18;
     margin-bottom: 0;
   }
 
   @media (max-width: 375px) {
-    font-size: 0.8rem;
-    padding: 0 5px;
+    font-size: 0.68rem;
+    padding: 0 2px;
+    line-height: 1.15;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.76rem;
-    padding: 0 4px;
-    line-height: 1.2;
+    font-size: 0.66rem;
+    padding: 0 1px;
+    line-height: 1.12;
   }
 `;
 
@@ -432,15 +433,15 @@ export const ContactSection = styled.div`
   }
 
   @media (max-width: 425px) {
-    gap: 5px;
+    gap: 6px;
   }
 
   @media (max-width: 375px) {
-    gap: 4px;
+    gap: 5px;
   }
 
   @media (max-width: 320px) {
-    gap: 3px;
+    gap: 4px;
   }
 `;
 
@@ -460,20 +461,21 @@ export const ContactTitle = styled.div`
   }
 
   @media (max-width: 425px) {
-    font-size: 0.96rem;
-    padding: 0 10px;
-    line-height: 1.28;
+    font-size: 0.82rem;
+    padding: 0 4px;
+    line-height: 1.2;
   }
 
   @media (max-width: 375px) {
-    font-size: 0.9rem;
-    padding: 0 8px;
+    font-size: 0.78rem;
+    padding: 0 3px;
+    line-height: 1.18;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.85rem;
-    padding: 0 6px;
-    line-height: 1.25;
+    font-size: 0.76rem;
+    padding: 0 2px;
+    line-height: 1.15;
   }
 `;
 
@@ -495,20 +497,22 @@ export const ContactSubtitle = styled.p`
   }
 
   @media (max-width: 425px) {
-    font-size: 0.85rem;
-    padding: 0 10px;
-    line-height: 1.25;
+    font-size: 0.7rem;
+    padding: 0 4px;
+    line-height: 1.18;
     margin: 0;
   }
 
   @media (max-width: 375px) {
-    font-size: 0.82rem;
-    padding: 0 8px;
+    font-size: 0.68rem;
+    padding: 0 3px;
+    line-height: 1.15;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.78rem;
-    padding: 0 5px;
+    font-size: 0.66rem;
+    padding: 0 2px;
+    line-height: 1.12;
   }
 `;
 
@@ -525,7 +529,16 @@ export const ContactEmail = styled.a`
   }
 
   @media (max-width: 425px) {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    margin-bottom: 1px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 0.76rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 0.74rem;
   }
 `;
 
@@ -543,15 +556,15 @@ export const EmailDescription = styled.div`
   }
 
   @media (max-width: 425px) {
-    font-size: 0.82rem;
+    font-size: 0.68rem;
   }
 
   @media (max-width: 375px) {
-    font-size: 0.8rem;
+    font-size: 0.66rem;
   }
 
   @media (max-width: 320px) {
-    font-size: 0.78rem;
+    font-size: 0.64rem;
   }
 `;
 

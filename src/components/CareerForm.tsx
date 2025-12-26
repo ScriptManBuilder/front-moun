@@ -290,8 +290,8 @@ ${data.message || 'No message provided'}
               {localeContent?.careerForm?.message || 'Tell us about yourself'}
               <span style={{ 
                 float: 'right', 
-                fontSize: '0.75rem', 
-                color: 'rgba(51, 65, 85, 0.6)',
+                fontSize: '0.55rem', 
+                color: 'rgba(51, 65, 85, 0.5)',
                 fontWeight: 'normal',
                 marginLeft: '10px'
               }}>
