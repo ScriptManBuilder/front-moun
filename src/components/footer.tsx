@@ -321,7 +321,7 @@ const Footer: React.FC = () => {
         </FooterTop>
 
         <FooterBottom>
-          <Copyright>{localeContent?.footer.copyright || "© 2025 Moun Digital Agency. All rights reserved."}</Copyright>
+          <Copyright>{localeContent?.footer.copyright || "© 2026 Moun Digital Agency. All rights reserved."}</Copyright>
           <TrustBadges>
             {localeContent?.footer.trustBadges || "Building digital solutions for clients worldwide • Long-term partnerships"}
           </TrustBadges>
