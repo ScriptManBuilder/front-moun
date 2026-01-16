@@ -309,7 +309,7 @@ const Footer: React.FC = () => {
                 <FooterIconLink href="https://www.linkedin.com/company/digital-agency-moun/" target="_blank" rel="noopener noreferrer">
                   {React.createElement(FaLinkedin as any)}
                 </FooterIconLink>
-                <FooterIconLink href="https://www.tiktok.com/@moun.digital.agen" target="_blank" rel="noopener noreferrer">
+                <FooterIconLink href="https://www.tiktok.com/@moundigitalagency" target="_blank" rel="noopener noreferrer">
                   {React.createElement(SiTiktok as any)}
                 </FooterIconLink>
                 <FooterIconLink href="https://t.me/moun_digital" target="_blank" rel="noopener noreferrer">
